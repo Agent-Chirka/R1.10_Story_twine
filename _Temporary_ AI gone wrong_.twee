@@ -18,30 +18,33 @@
 <p> We have heard you are a talented engineer in Artificial Intelligence. So we wanted to make sure your work environment is as perfect as possible! Welcome to your main facility where you can use and study your own AI Model. But let's not rush and let us take time to know a little more about you.  </p>
 (live: 5s) [
 (stop:)
-(set: $name to(prompt:"Can you please remind us of your name ?" , "")
-(if:$name is "") [(undo:)]
-[[Beginning 2]] 
+
+(set: $nom_joueur to "test")
+
+(set: $nom_joueur to (prompt: "Can you please remind us of your name ?", ""))
+
+[[logique 1]] 
 ]
 
 
-:: Beginning 2 {"position":"625,250","size":"100,100"}
-<p> Nice to meet you $name ! It is such a privilege for us to work with a skilled engineer of your level</p>
+:: Beginning 2 {"position":"725,250","size":"100,100"}
+<p> Nice to meet you $nom_joueur ! It is such a privilege for us to work with a skilled engineer of your level</p>
 <p> We already know that you have created a much innovative AI Model, yet we have not been communicated its name. </p>
 (live: 5s) [
 (stop:)
-(set: $name_ai to(prompt:"Can you please remind us of your AI Model's name ?" , "")
+(set: $name_ai to(prompt:"Can you please remind us of your AI Model's name ?" , ""))
 [[Beginning 3]] 
 ]
 
 
-:: Beginning 3 {"position":"875,300","size":"100,100"}
+:: Beginning 3 {"position":"875,225","size":"100,100"}
 <p> Very interesting name that is... $name_ai. Your AI must be very smart and well trained! </p>
 
 <p> Well so we believe that we have enough information as of now, you can already begin the work. Are you ready to start your new technological journey?
 [[Yes]] [[No]]
 
 
-:: No {"position":"1000,50","size":"100,100"}
+:: No {"position":"1125,100","size":"100,100"}
 <p> Oh that's not a matter at all. Once you are ready, let us know. But we are deeply saddened as we will not rely on such a talented engineer... </p>
 
 <p> We wish you all the best $name ! </p>
@@ -50,8 +53,14 @@
 ---------------------END 1-----------------------
 
 
-:: Yes {"position":"1100,350","size":"100,100"}
+:: Yes {"position":"1150,300","size":"100,100"}
 <p> Here begins the main event! </p>
+
+
+:: logique 1 {"position":"550,125","size":"100,100"}
+(if:$nom_joueur is "")[(set: $nom_joueur to "jarvis")]
+
+(go-to: "Beginning 2")
 
 
 :: StoryStylesheet [stylesheet]
