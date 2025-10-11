@@ -1,0 +1,68 @@
+:: StoryTitle
+(Temporary) AI gone wrong!
+
+
+:: StoryData
+{
+  "ifid": "33E62F6C-C863-4E99-B5E6-69A4F130B100",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Beginning",
+  "zoom": 1
+}
+
+
+:: Beginning {"position":"375,250","size":"100,100"}
+<p class="Main_title">Welcome!</p>
+
+<p> We have heard you are a talented engineer in Artificial Intelligence. So we wanted to make sure your work environment is as perfect as possible! Welcome to your main facility where you can use and study your own AI Model. But let's not rush and let us take time to know a little more about you.  </p>
+(live: 5s) [
+(stop:)
+(set: $name to(prompt:"Can you please remind us of your name ?" , "")
+(if:$name is "") [(undo:)]
+[[Beginning 2]] 
+]
+
+
+:: Beginning 2 {"position":"625,250","size":"100,100"}
+<p> Nice to meet you $name ! It is such a privilege for us to work with a skilled engineer of your level</p>
+<p> We already know that you have created a much innovative AI Model, yet we have not been communicated its name. </p>
+(live: 5s) [
+(stop:)
+(set: $name_ai to(prompt:"Can you please remind us of your AI Model's name ?" , "")
+[[Beginning 3]] 
+]
+
+
+:: Beginning 3 {"position":"875,300","size":"100,100"}
+<p> Very interesting name that is... $name_ai. Your AI must be very smart and well trained! </p>
+
+<p> Well so we believe that we have enough information as of now, you can already begin the work. Are you ready to start your new technological journey?
+[[Yes]] [[No]]
+
+
+:: No {"position":"1000,50","size":"100,100"}
+<p> Oh that's not a matter at all. Once you are ready, let us know. But we are deeply saddened as we will not rely on such a talented engineer... </p>
+
+<p> We wish you all the best $name ! </p>
+
+
+---------------------END 1-----------------------
+
+
+:: Yes {"position":"1100,350","size":"100,100"}
+<p> Here begins the main event! </p>
+
+
+:: StoryStylesheet [stylesheet]
+tw-story {
+  background-image:url("https://cdnb.artstation.com/p/assets/images/images/065/892/097/large/manoj-kumar-4.jpg?1691504028");
+ background-size:cover;
+}
+tw-sidebar {
+  display: none; 
+}
+
+p {
+  color : blue;
+}
