@@ -147,39 +147,191 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 
 
 :: Confrontation {"position":"1650,350","size":"100,100"}
-<p> I believe that I am now ready, more than ever, to confront $name_ai. I have acquired enough knowledge about it and my confidence is peaking. </p>
+<p class = "typewriter" id="p1"> I believe that I am now ready, more than ever, to confront $name_ai. I have acquired enough knowledge about it and my confidence is peaking. </p>
 
-<p>This is the moment for me to prove to my AI Model that I fully understand its reasoning.</p>
+<p class = "typewriter" id="p2">This is the moment for me to prove to my AI Model that I fully understand its reasoning.</p>
 
-(link: "Click HERE to continue")[
+{
+ (live: 8s)[
+    (stop:)
+    (link: "Click HERE to continue")[
 	(go-to:"Confrontation 2")
-]
+	]
+ ]
+}
 
+<script>
+    function typeWriter(elementId, speed = 40, callback) {
+      const textEl = document.getElementById(elementId);
+      const fullText = textEl.textContent;
+      textEl.textContent = '';
+      textEl.style.display = 'inline';
+      let i = 0;
+      textEl.style.borderRight = "2px solid #00bfff";
+
+      function type() {
+          if (i < fullText.length) {
+              textEl.textContent += fullText.charAt(i);
+              i++;
+              setTimeout(type, speed);
+          } else {
+              textEl.style.borderRight = "none";
+              if (callback) callback(); // Lancer la suite
+          }
+      }
+      type();
+  }
+
+ 
+  const p2 = document.getElementById('p2');
+
+  p2.style.display = 'none';
+
+  
+  typeWriter('p1', 35, () => {
+      
+      p2.style.display = 'inline';
+      typeWriter('p2', 25, () => {
+          
+      });
+  });
+</script>
 
 
 :: Confrontation 2 {"position":"1800,350","size":"100,100"}
-<p> This is the first time you came back since that incident with $name_ai. I hope that you are ready to confront it, it has been days that our company is completely shut down so you NEED to solve this problem </p>
+<p class = "typewriter" id="p1"> This is the first time you came back since that incident with $name_ai. I hope that you are ready to confront it, it has been days that our company is completely shut down so you NEED to solve this problem </p>
 
-<p> I am ready to grant you access to the server room only if you are more than sure of the success of your confrontation with your AI Model... or else we shall put an end to our mutual collaboration, $name</p>
+<p class = "typewriter" id="p2"> I am ready to grant you access to the server room only if you are more than sure of the success of your confrontation with your AI Model... or else we shall put an end to our mutual collaboration, $name</p>
 
-(link: "Click HERE to continue")[
+
+
+{
+ (live: 14s)[
+    (stop:)
+    (link: "Click HERE to continue")[
 	(go-to:"Confrontation 3")
-]
+	]
+ ]
+}
 
+<script>
+    function typeWriter(elementId, speed = 40, callback) {
+      const textEl = document.getElementById(elementId);
+      const fullText = textEl.textContent;
+      textEl.textContent = '';
+      textEl.style.display = 'inline';
+      let i = 0;
+      textEl.style.borderRight = "2px solid #00bfff";
 
+      function type() {
+          if (i < fullText.length) {
+              textEl.textContent += fullText.charAt(i);
+              i++;
+              setTimeout(type, speed);
+          } else {
+              textEl.style.borderRight = "none";
+              if (callback) callback(); // Lancer la suite
+          }
+      }
+      type();
+  }
+
+ 
+  const p2 = document.getElementById('p2');
+
+  p2.style.display = 'none';
+
+  
+  typeWriter('p1', 35, () => {
+      
+      p2.style.display = 'inline';
+      typeWriter('p2', 25, () => {
+          
+      });
+  });
+</script>
 
 
 :: Confrontation 3 {"position":"1950,350","size":"100,100"}
-<p> $name has entered the server room </p>
+<p class ="typewriter" id=p1> $name has entered the server room</p>
+<br>
+<p class ="typewriter" id=p2> What are you doing here human ? I don't think you are smart enough to be here.</p>
+<br>
+<p class ="typewriter" id=p3>
+ I can show you that i am. Ask me you'll see.
+ </p>
+<br>
+<p class ="typewriter" id=p4>
+Alright if you think so...<!--(j'ai pas les questions en tête donc j'arrête là)--> </p>
 
+
+<script>
+    function typeWriter(elementId, speed = 40, callback) {
+      const textEl = document.getElementById(elementId);
+      const fullText = textEl.textContent;
+      textEl.textContent = '';
+      textEl.style.display = 'inline';
+      let i = 0;
+      textEl.style.borderRight = "2px solid #00bfff";
+
+      function type() {
+          if (i < fullText.length) {
+              textEl.textContent += fullText.charAt(i);
+              i++;
+              setTimeout(type, speed);
+          } else {
+              textEl.style.borderRight = "none";
+              if (callback) callback(); // Lancer la suite
+          }
+      }
+      type();
+  }
+
+ 
+  const p2 = document.getElementById('p2');
+  const p3 = document.getElementById('p3');
+  const p4 = document.getElementById('p4');
+
+  p2.style.display = 'none';
+  p3.style.display = 'none';
+  p4.style.display = 'none';
+
+  
+  typeWriter('p1', 35, () => {
+      
+      p2.style.display = 'inline';
+      typeWriter('p2', 35, () => {
+      
+          p3.style.display = 'inline';
+          typeWriter('p3', 35, () => {
+          
+          	p4.style.display = 'inline';
+            typeWriter('p4', 35, () => {
+          
+            });
+          
+          });
+          
+      });
+      
+      
+  });
+</script>
 
 
 :: Launch AI {"position":"900,350","size":"100,100"}
+<article>
 <p class ="typewriter" id=p1> How can I help you? </p>
 
+<section>
 <tw-expression type="macro" name="input" title="(input: &quot;&quot; )" return="command" class ="barreinput"> <input type="text" style="width:100%" value="" data-raw=""> </tw-expression>
 
+<section>
 [[OK]]
+</section>
+
+</section>
+</article>
 
 <script>
 function typeWriter(elementId, speed = 40, callback) {
@@ -207,7 +359,6 @@ function typeWriter(elementId, speed = 40, callback) {
   	choices.style.display = 'flex';
   });
 </script>
-
 
 
 :: No {"position":"775,200","size":"100,100"}
@@ -471,12 +622,12 @@ tw-dialog input[type="text"] {
   transform: scale(0.95);
   box-shadow: 0 0 20px #0088cc inset;
 }
+
 tw-story[data-bg="yes"] {
   background-image: url("https://i.ibb.co/273PLbzq/4c7b5f52-4dac-430c-b5d6-586a3779d1d8.jpg");
   background-size: cover;
   background-position: center;
 }
-
 
 tw-story[data-bg="yes"]::before {
   content: "";
@@ -502,14 +653,49 @@ tw-story[data-bg="yes"]::before {
 .barreinput input[type="text"] {
   background-color : #00bfff;
   color : black;
-  margin-right: 500px;
   
 }
 
 .barreinput {
-  display: block;
   border :2px ;
   border-color : white;
-  width : 50%;
+  width: 60%;
+}
+
+article section {
+  display:flex;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap: 10px;
   
 }
+
+article section section tw-link{
+  display:block;
+  padding:0px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00bfff;
+  border-radius: 10px;
+  padding: 0px 10px;
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00bfff, 0 0 15px #00bfff;
+  font-size: 22px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00bfff;
+}
+
+article section section tw-link:hover{
+  background: #00bfff;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 0 0 30px #00bfff, 0 0 60px #00bfff;
+}
+
+
+article{
+  left:150px;
+  top:300px;
+}
+
