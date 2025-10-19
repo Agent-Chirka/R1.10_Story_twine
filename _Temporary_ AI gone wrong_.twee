@@ -491,6 +491,12 @@ function typeWriter(elementId, speed = 40, callback) {
 
 
 
+:: logique 1 {"position":"550,125","size":"100,100"}
+(if:$nom_joueur is "")[(set: $nom_joueur to "jarvis")]
+
+(go-to: "Beginning 2")
+
+
 :: StoryStylesheet [stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
