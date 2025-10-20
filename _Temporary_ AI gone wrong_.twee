@@ -198,7 +198,7 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
-:: Confrontation 2 {"position":"1800,350","size":"100,100"}
+:: Confrontation 2 {"position":"1775,350","size":"100,100"}
 <p class = "typewriter" id="p1"> This is the first time you came back since that incident with $name_ai. I hope that you are ready to confront it, it has been days that our company is completely shut down so you NEED to solve this problem </p>
 
 <p class = "typewriter" id="p2"> I am ready to grant you access to the server room only if you are more than sure of the success of your confrontation with your AI Model... or else we shall put an end to our mutual collaboration, $name</p>
@@ -252,7 +252,7 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
-:: Confrontation 3 {"position":"1950,350","size":"100,100"}
+:: Confrontation 3 {"position":"1900,350","size":"100,100"}
 <p class ="typewriter" id=p1> $name has entered the server room</p>
 <br>
 <p class ="typewriter" id=p2> What are you doing here human ? I don't think you are smart enough to be here.</p>
@@ -317,6 +317,16 @@ Alright if you think so...<!--(j'ai pas les questions en tête donc j'arrête l�
       
   });
 </script>
+
+
+:: Fin QCM {"position":"2500,350","size":"100,100"}
+<p> L'ia parle </p>
+
+(if:$score>=0)[
+	<p> Tu as gagné </p>
+](else:)[
+	<p> Tu as perdu </p>
+]
 
 
 :: Launch AI {"position":"900,350","size":"100,100"}
@@ -420,6 +430,98 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
+:: Question 1 {"position":"2250,350","size":"100,100"}
+(set:$score to 0)
+
+
+<p class ="typewriter" id=p1> Question </p>
+
+<span>
+(link: "Bonne réponse")[
+  (set:$score to $score+1)
+(go-to:"Question 2")
+]
+
+(link: "Mauvaise réponse")[
+  (set:$score to $score-1)
+(go-to:"Question 2")
+]
+</span>
+
+
+<script>
+function typeWriter(elementId, speed = 40, callback) {
+  	const textEl = document.getElementById(elementId);
+  	const fullText = textEl.textContent;
+  	textEl.textContent = '';
+  	textEl.style.display = 'inline';
+  	textEl.style.borderRight = "2px solid #00bfff";
+
+  	let i = 0;
+  	function type() {
+      	if (i < fullText.length) {
+          	textEl.textContent += fullText.charAt(i);
+          	i++;
+          	setTimeout(type, speed);
+     	 
+      	} else {
+          	textEl.style.borderRight = "none";
+          	}
+  	}
+  	type();
+  }
+
+  typeWriter('p1', 35, () => {
+  	choices.style.display = 'flex';
+  });
+</script>
+
+
+:: Question 2 {"position":"2375,350","size":"100,100"}
+
+<p class ="typewriter" id=p1> Question </p>
+
+<span>
+(link: "Bonne réponse")[
+  (set:$score to $score+1)
+(go-to:"Fin QCM")
+]
+
+(link: "Mauvaise réponse")[
+  (set:$score to $score-1)
+(go-to:"Fin QCM")
+]
+</span>
+
+
+<script>
+function typeWriter(elementId, speed = 40, callback) {
+  	const textEl = document.getElementById(elementId);
+  	const fullText = textEl.textContent;
+  	textEl.textContent = '';
+  	textEl.style.display = 'inline';
+  	textEl.style.borderRight = "2px solid #00bfff";
+
+  	let i = 0;
+  	function type() {
+      	if (i < fullText.length) {
+          	textEl.textContent += fullText.charAt(i);
+          	i++;
+          	setTimeout(type, speed);
+     	 
+      	} else {
+          	textEl.style.borderRight = "none";
+          	}
+  	}
+  	type();
+  }
+
+  typeWriter('p1', 35, () => {
+  	choices.style.display = 'flex';
+  });
+</script>
+
+
 :: Research 1 {"position":"1150,350","size":"100,100"}
 <p>Oh I can see that your AI refuses to obey to your instruction. This is very unexpected. What is wrong with it? </p>
 
@@ -487,14 +589,14 @@ function typeWriter(elementId, speed = 40, callback) {
 
 
 
-:: net {"position":"1400,225","size":"100,100"}
-
-
-
-:: logique 1 {"position":"550,125","size":"100,100"}
+:: logique 1 {"position":"575,150","size":"100,100"}
 (if:$nom_joueur is "")[(set: $nom_joueur to "jarvis")]
 
 (go-to: "Beginning 2")
+
+
+:: net {"position":"1400,225","size":"100,100"}
+
 
 
 :: StoryStylesheet [stylesheet]
@@ -705,3 +807,29 @@ article{
   top:300px;
 }
 
+span{
+  display:flex;
+  gap:20px;
+}
+
+span tw-hook tw-link {
+  display:block;
+  padding:0px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00bfff;
+  border-radius: 10px;
+  padding: 0px 10px;
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00bfff, 0 0 15px #00bfff;
+  font-size: 22px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00bfff;
+}
+
+span tw-hook tw-link:hover {
+  background: #00bfff;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 0 0 30px #00bfff, 0 0 60px #00bfff;
