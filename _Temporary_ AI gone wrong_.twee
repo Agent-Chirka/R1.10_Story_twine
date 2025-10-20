@@ -219,15 +219,199 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 <p> Maybe I can find the answers to all my questions in the [[library]], on the [[net]] or perhaps in my very own [[archives]]...</p>
 
 
-
-
-
-
+:: acesse granted {"position":"1025,1100","size":"100,100"}
 
 
 
 :: archives {"position":"1025,600","size":"100,100"}
 <!-- Le joueur va trouver des informations sur sa conception (qu'il a élaboré) de l'IA, la manière avec laquelle il l'a créée -->
+
+<p> you decided to look into the $nam_ai's archives, there must be something off in here… </p>
+
+
+<p>you try to access the recent logs.</p>
+
+<p>But to no avail.</p>
+
+<p>The $nam_ai took control of all of the hardware linked to it. You will have to stick to the physical archives.</p>
+
+
+[[rummage throw the archives]]
+
+
+:: concrete example {"position":"1025,975","size":"100,100"}
+clef de l'ia : (2.4, 3.2)
+
+clef du Protagonist : (6.4, 1.6)
+
+<p> it might be possible to get back control of some part of the system. </p>
+
+<p> if you could just manage to reverse the right between you and the AI. The thing is, that you will have to temper with the AI that managed the permission. you do remember your identifier, it’s two number, 6.4 and 1.6. you also noted that $name_ai have 2.4 and 3.2 as their ID. To do that you need to have output less than 1 for the $name_ai’ID and an output larger than 1 for your ID</p>
+
+<h2> security system’s AI </h2>
+
+<ul>
+	<li>
+    	<ul>
+        	<li>$Neud1C1</li>
+			<li>$Neud2C1</li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li>(input-box: bind $poid_synapse_Neud1C1_Neud1C2, "=========XXXXX====================================", 1,$poid_synapse_Neud1C1_Neud1C2)</li>
+			<li>(input-box: bind $poid_synapse_Neud1C1_Neud2C2,  "=========XXXXX====================================", 1, $poid_synapse_Neud1C1_Neud2C2)</li>
+        	<li>(input-box: bind $poid_synapse_Neud2C1_Neud1C2, "=========XXXXX====================================", 1, $poid_synapse_Neud2C1_Neud1C2)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C1_Neud2C2, "=========XXXXX====================================", 1,$poid_synapse_Neud2C1_Neud2C2)</li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li>$Neud1C2</li>
+			<li>$Neud2C2</li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li>(input-box: bind $poid_synapse_Neud1C2_Neud1C3, "===============================================================XXXXXXXXXX===========================", 1, $poid_synapse_Neud1C2_Neud1C3)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C2_Neud1C3, "===============================================================XXXXXXXXXX===========================", 1,$poid_synapse_Neud2C2_Neud1C3)</li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li>$Neud1C3</li>
+		</ul>
+	</li>
+
+
+{
+
+
+(link-repeat: "AI k")[
+
+(set: $Neud1C1 to $Neud1C1_ia)
+(set: $Neud2C1 to $Neud2C1_ia)
+
+(go-to: "concrete example")
+
+]
+
+
+(link-repeat: "pour le protagoniste")[
+
+(set: $Neud1C1 to $Neud1C1_Pr)
+(set: $Neud2C1 to $Neud2C1_Pr)
+
+(go-to: "concrete example")
+
+]
+
+
+(link-repeat: "up date")[
+
+
+
+(set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
+				+ (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
+
+(set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
+				+ (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
+
+
+
+(set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
+				+ (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
+
+(go-to: "concrete example")
+
+]
+
+
+(link-repeat: "try it out the")[
+
+    (set: $Neud1C1 to $Neud1C1_ia)
+    (set: $Neud2C1 to $Neud2C1_ia)
+
+
+
+    (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
+                    + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
+
+    (set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
+                    + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
+
+
+    (set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
+                    + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
+
+
+    (set: $Neud1C3_ia to $Neud1C3)
+
+
+
+
+    (set: $Neud1C1 to $Neud1C1_ia)
+    (set: $Neud2C1 to $Neud2C1_ia)
+
+
+
+    (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
+                    + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
+
+    (set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
+                    + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
+
+
+    (set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
+                    + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
+
+
+    (set: $Neud1C3_ia to $Neud1C3)
+
+
+    (if: ($sortie_Pr > 1 and $sortie_ia < 1))[
+	(go-to: "acesse granted")
+    ]
+]
+}
+
+
+
+
+
+
+:: concrete example set up {"position":"1025,850","size":"100,100"}
+(set: $Neud1C1_ia to 2.4)
+(set: $Neud2C1_ia to 3.2)
+
+(set: $Neud1C1_Pr to 6.4)
+(set: $Neud2C1_Pr to 1.6)
+
+(set: $poid_synapse_Neud1C1_Neud1C2 to "")
+(set: $poid_synapse_Neud1C1_Neud2C2 to "")
+
+(set: $poid_synapse_Neud2C1_Neud1C2 to "")
+(set: $poid_synapse_Neud2C1_Neud2C2 to "")
+
+
+(set: $poid_synapse_Neud1C2_Neud1C3 to "")
+(set: $poid_synapse_Neud2C2_Neud1C3 to "")
+
+
+
+(set: $Neud1C1 to 0)
+(set: $Neud2C1 to 0)
+
+
+(set: $Neud1C2 to 0)
+(set: $Neud2C2 to 0)
+
+(set: $Neud1C3 to 0)
+
+(set: $sortie_ia to 0)
+(set: $sortie_Pr to 0)
+
+(go-to: "concrete example")
 
 
 :: library {"position":"1150,600","size":"100,100"}
@@ -250,6 +434,17 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 }
 
 
+:: rummage throw the archives {"position":"1025,725","size":"100,100"}
+<p>You find out that the now rogue $nam_ai, is based on a neural network architecture.</p>
+
+<p>It is composed of numerical inputs node.</p>
+<p>And each layer of node is connected to a next layer by synapse.</p>
+<p>They multiply the numerical value from the last layer by there weight, another numerical value.</p>
+<p>Then the node from the next layer adds all of the value from the synapses connected.</p>
+<p>Then the last layer is the output.</p>
+
+
+<p>You figured that a [[concrete example set up]] will be mandatory to understand.</p>
 
 
 :: StoryStylesheet [stylesheet]
