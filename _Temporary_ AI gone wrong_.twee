@@ -7,12 +7,78 @@
   "ifid": "33E62F6C-C863-4E99-B5E6-69A4F130B100",
   "format": "Harlowe",
   "format-version": "3.3.9",
-  "start": "Beginning",
+  "start": "Start Menu",
   "zoom": 1
 }
 
 
 :: Beginning {"position":"400,275","size":"100,100"}
+<script>
+(function(){
+  let overlay = document.getElementById("transition-overlay");
+  if(!overlay){
+    overlay = document.createElement("div");
+    overlay.id = "transition-overlay";
+    document.body.appendChild(overlay);
+  }
+
+  overlay.innerHTML = '';
+  overlay.style.background = 'transparent';
+
+
+  for(let i=0;i<25;i++){
+    const rect = document.createElement('div');
+    rect.className = 'tech-rect';
+    rect.style.left = Math.random()*100 + 'vw';
+    rect.style.top = Math.random()*100 + 'vh';
+    rect.style.width = (30+Math.random()*120)+'px';
+    rect.style.height = (5+Math.random()*15)+'px';
+    rect.style.animationDelay = (Math.random()*0.5)+'s';
+    rect.style.animationDuration = (1.5 + Math.random()*1.5)+'s';
+    rect.style.setProperty('--phase', Math.random()*2*Math.PI); 
+    overlay.appendChild(rect);
+  }
+
+  // Scans horizontaux
+  for(let i=0;i<5;i++){
+    const scanH = document.createElement('div');
+    scanH.className = 'scan-horizontal';
+    scanH.style.top = Math.random()*100+'vh';
+    scanH.style.animationDelay = (i*0.2)+'s';
+    overlay.appendChild(scanH);
+  }
+
+  for(let i=0;i<3;i++){
+    const scanV = document.createElement('div');
+    scanV.className = 'scan-vertical';
+    scanV.style.left = Math.random()*100+'vw';
+    scanV.style.animationDelay = (i*0.3)+'s';
+    overlay.appendChild(scanV);
+  }
+
+
+  for(let i=0;i<7;i++){
+    const explosion = document.createElement('div');
+    explosion.className = 'explosion';
+    explosion.style.left = Math.random()*100+'vw';
+    explosion.style.top = Math.random()*100+'vh';
+    explosion.style.animationDelay = (i*0.2)+'s';
+    overlay.appendChild(explosion);
+  }
+
+  overlay.classList.remove('active');
+  void overlay.offsetWidth;
+  overlay.classList.add('active');
+
+  setTimeout(()=>{
+    overlay.classList.remove('active');
+    overlay.innerHTML='';
+  },2200);
+
+})();
+</script>
+
+
 <p class="Main_title typewriter" id="welcomeText">Welcome!</p>
 
 <p class="typewriter" id="introText">
@@ -49,6 +115,8 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
   typeWriter('welcomeText', 80);
   typeWriter('introText', 20);
 </script>
+
+
 
 
 :: Beginning 2 {"position":"525,275","size":"100,100"}
@@ -319,6 +387,16 @@ Alright if you think so...<!--(j'ai pas les questions en tête donc j'arrête l�
 </script>
 
 
+:: Fin QCM {"position":"2350,350","size":"100,100"}
+<p> L'ia parle </p>
+
+(if:$score>=0)[
+	<p> Tu as gagné </p>
+](else:)[
+	<p> Tu as perdu </p>
+]
+
+
 :: Launch AI {"position":"900,350","size":"100,100"}
 <article>
 <p class ="typewriter" id=p1> How can I help you? </p>
@@ -444,12 +522,117 @@ function typeWriter(elementId, speed = 40, callback) {
 </article>
 
 
+:: Question 1 {"position":"2100,350","size":"100,100"}
+(set:$score to 0)
+
+
+<p class ="typewriter" id=p1> Question </p>
+
+<span>
+(link: "Bonne réponse")[
+  (set:$score to $score+1)
+(go-to:"Question 2")
+]
+
+(link: "Mauvaise réponse")[
+  (set:$score to $score-1)
+(go-to:"Question 2")
+]
+</span>
+
+
+<script>
+function typeWriter(elementId, speed = 40, callback) {
+  	const textEl = document.getElementById(elementId);
+  	const fullText = textEl.textContent;
+  	textEl.textContent = '';
+  	textEl.style.display = 'inline';
+  	textEl.style.borderRight = "2px solid #00bfff";
+
+  	let i = 0;
+  	function type() {
+      	if (i < fullText.length) {
+          	textEl.textContent += fullText.charAt(i);
+          	i++;
+          	setTimeout(type, speed);
+     	 
+      	} else {
+          	textEl.style.borderRight = "none";
+          	}
+  	}
+  	type();
+  }
+
+  typeWriter('p1', 35, () => {
+  	choices.style.display = 'flex';
+  });
+</script>
+
+
+:: Question 2 {"position":"2225,350","size":"100,100"}
+<p class ="typewriter" id=p1> Question </p>
+
+<span>
+(link: "Bonne réponse")[
+  (set:$score to $score+1)
+(go-to:"Fin QCM")
+]
+
+(link: "Mauvaise réponse")[
+  (set:$score to $score-1)
+(go-to:"Fin QCM")
+]
+</span>
+
+
+<script>
+function typeWriter(elementId, speed = 40, callback) {
+  	const textEl = document.getElementById(elementId);
+  	const fullText = textEl.textContent;
+  	textEl.textContent = '';
+  	textEl.style.display = 'inline';
+  	textEl.style.borderRight = "2px solid #00bfff";
+
+  	let i = 0;
+  	function type() {
+      	if (i < fullText.length) {
+          	textEl.textContent += fullText.charAt(i);
+          	i++;
+          	setTimeout(type, speed);
+     	 
+      	} else {
+          	textEl.style.borderRight = "none";
+          	}
+  	}
+  	type();
+  }
+
+  typeWriter('p1', 35, () => {
+  	choices.style.display = 'flex';
+  });
+</script>
+
+
 :: Research 1 {"position":"1150,350","size":"100,100"}
 <p>Oh I can see that your AI refuses to obey to your instruction. This is very unexpected. What is wrong with it? </p>
 
 <p> We need you to fix it as we will absolutely rely on it. Do you feel ready to accomplish such an important and historical task? </p>
 
 [[Yes Boss, you can count on me]]
+
+
+:: Start Menu {"position":"525,425","size":"100,100"}
+<div class="intro-screen">
+  <div class="holo-panel">
+    <h1 class="intro-title">Neural AI : Engineer at Risk</h1>
+    <div class="intro-button">
+      (link: "Start Simulation")[
+        (go-to: "Beginning")
+      ]
+    </div>
+  </div>
+</div>
+
 
 
 :: Yes {"position":"775,350","size":"100,100"}
@@ -735,27 +918,25 @@ article{
   padding: 12px 20px;
   font-family: 'Orbitron', sans-serif;
   font-size: 18px;
-  color: #00ffff;
+  color: #00bfff; /* texte bleu principal */
   background: rgba(0, 0, 0, 0.85);
-  border: 2px solid #00ffff;
+  border: 2px solid #00bfff; /* harmonisation */
   border-radius: 8px;
   outline: none;
-  text-shadow: 0 0 8px #00ffff, 0 0 12px #00bfff;
-  box-shadow: 0 0 10px #00ffff, inset 0 0 15px #002244;
+  text-shadow: 0 0 8px #00bfff, 0 0 12px #00bfff; /* texte glow */
+  box-shadow: 0 0 10px #00bfff, inset 0 0 15px #002244; /* halo interne */
   transition: all 0.3s ease-in-out;
   animation: glowPulse 2.5s infinite ease-in-out;
 }
 
-
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 10px #00ffff, inset 0 0 15px #002244;
+    box-shadow: 0 0 10px #00bfff, inset 0 0 15px #002244;
   }
   50% {
-    box-shadow: 0 0 25px #00ffff, inset 0 0 25px #003355;
+    box-shadow: 0 0 25px #00bfff, inset 0 0 25px #003355;
   }
 }
-
 
 .barreinput input[type="text"]:focus {
   background: rgba(0, 50, 70, 0.9);
@@ -763,7 +944,6 @@ article{
   box-shadow: 0 0 25px #00bfff, inset 0 0 25px #004466;
   transform: scale(1.03);
 }
-
 
 .barreinput input[type="text"]::before {
   content: "";
@@ -775,7 +955,7 @@ article{
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(0, 255, 255, 0.2),
+    rgba(0, 187, 255, 0.2), /* harmonisation bleu principal */
     transparent
   );
   animation: scan 3s infinite linear;
@@ -786,6 +966,7 @@ article{
   50% { left: 100%; }
   100% { left: 100%; }
 }
+
 
 .virus-takeover {
   position: fixed;
@@ -832,3 +1013,323 @@ article{
 body.shake-soft {
   animation: shake-soft 0.5s ease-in-out;
 }
+span tw-hook tw-link {
+  display:block;
+  padding:0px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00bfff;
+  border-radius: 10px;
+  padding: 0px 10px;
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00bfff, 0 0 15px #00bfff;
+  font-size: 22px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00bfff;
+}
+article section {
+  display:flex;
+  align-items:center;
+  flex-wrap:nowrap;
+  gap: 10px;
+  
+}
+
+article section section tw-link{
+  display:block;
+  padding:0px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #00bfff;
+  border-radius: 10px;
+  padding: 0px 10px;
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00bfff, 0 0 15px #00bfff;
+  font-size: 22px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00bfff;
+}
+
+article section section tw-link:hover{
+  background: #00bfff;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 0 0 30px #00bfff, 0 0 60px #00bfff;
+}
+
+
+article{
+  left:150px;
+  top:300px;
+}
+
+span{
+  display:flex;
+  gap:20px;
+}
+
+span tw-hook tw-link:hover {
+  background: #00bfff;
+  color: #000;
+  text-shadow: none;
+  box-shadow: 0 0 30px #00bfff, 0 0 60px #00bfff;
+}
+#transition-overlay{
+  position: fixed;
+  top:0; left:0;
+  width:100vw; height:100vh;
+  pointer-events:none;
+  z-index:9999;
+  overflow:hidden;
+  background: transparent;
+}
+
+#transition-overlay.active{
+  background: rgba(0,0,0,0.15);
+  animation: overlayFade 2.2s ease-in-out forwards;
+}
+
+@keyframes overlayFade{0%{opacity:1;}100%{opacity:0;}}
+
+.tech-rect{
+  position:absolute;
+  background: rgba(0,255,255,0.6);
+  border:1px solid #00bfff;
+  box-shadow:0 0 15px #00ffff,0 0 30px #00bfff;
+  width:50px; height:8px;
+  transform: translateY(-100%);
+  animation: rectWave 1.8s ease-in-out forwards, rectSine 1s ease-in-out infinite alternate;
+}
+
+@keyframes rectWave{
+  0%{transform: translateY(-100%) scaleX(0); opacity:0;}
+  40%{transform: translateY(40%) scaleX(1.2); opacity:1;}
+  70%{transform: translateY(10%) scaleX(0.9); opacity:0.7;}
+  100%{transform: translateY(0) scaleX(1); opacity:0;}
+}
+
+
+@keyframes rectSine{
+  0%{transform: translateX(0);}
+  25%{transform: translateX(5px);}
+  50%{transform: translateX(0);}
+  75%{transform: translateX(-5px);}
+  100%{transform: translateX(0);}
+}
+
+.scan-horizontal{
+  position:absolute;
+  width:100%; height:4px;
+  background: linear-gradient(90deg,transparent, rgba(0,255,255,0.9), transparent);
+  animation: scanH 1.6s ease-in-out forwards;
+}
+@keyframes scanH{0%{top:-5%;opacity:1;}50%{top:50%;opacity:0.8;}100%{top:105%;opacity:0;}}
+
+.scan-vertical{
+  position:absolute;
+  width:4px; height:100%;
+  background: linear-gradient(180deg,transparent, rgba(0,255,255,0.9), transparent);
+  animation: scanV 1.6s ease-in-out forwards;
+}
+@keyframes scanV{0%{left:-5%;opacity:1;}50%{left:50%;opacity:0.8;}100%{left:105%;opacity:0;}}
+
+.explosion{
+  position:absolute;
+  width:15px; height:15px;
+  border-radius:50%;
+  background: rgba(0,255,255,0.9);
+  box-shadow:0 0 25px #00ffff,0 0 35px #00bfff;
+  animation: explode 0.8s ease-out forwards;
+}
+@keyframes explode{
+  0%{transform: scale(0);opacity:1;}
+  50%{transform: scale(2.5);opacity:0.8;}
+  100%{transform: scale(0);opacity:0;}
+}
+
+#transition-overlay::after{
+  content:'';
+  position:absolute;
+  width:100%; height:100%;
+  top:0; left:0;
+  background: repeating-linear-gradient(0deg, rgba(0,255,255,0.05), rgba(0,255,255,0.05) 2px, transparent 2px, transparent 4px);
+  animation: glitch 0.2s linear alternate-reverse;
+  opacity:0;
+}
+#transition-overlay.active::after{
+  opacity:1;
+  animation: glitch 0.2s infinite linear alternate-reverse;
+}
+@keyframes glitch{0%{transform:translateX(0);}50%{transform:translateX(3px);}100%{transform:translateX(-3px);}}
+
+.intro-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.95) 0%, #000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.intro-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(60deg, rgba(0,187,255,0.12) 1px, transparent 1px),
+                      linear-gradient(-60deg, rgba(0,187,255,0.12) 1px, transparent 1px);
+}
+  background-size: 60px 60px;
+  z-index: 0;
+  opacity: 0.35;
+  animation: gridGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes gridGlow {
+  0% { opacity: 0.25; filter: brightness(0.8); }
+  100% { opacity: 0.5; filter: brightness(1.3); }
+}
+
+
+.holo-panel {
+  position: relative;
+  background: rgba(0, 20, 40, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 187, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 187, 255, 0.3), inset 0 0 30px rgba(0, 187, 255, 0.2);
+  border-radius: 20px;
+  padding: 120px 200px;
+  text-align: center;
+  z-index: 1;
+
+}
+
+@keyframes panelFade {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+.holo-panel::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  border-radius: 20px;
+  background: radial-gradient(circle at center, rgba(0,187,255,0.3) 0%, transparent 70%);
+  filter: blur(15px);
+  z-index: -1;
+  animation: haloPulse 3s ease-in-out infinite;
+}
+
+@keyframes haloPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+/* Titre */
+.intro-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 60px;
+  color: #00bfff;
+  text-shadow: 0 0 10px #00bfff, 0 0 25px #00bfff, 0 0 60px #00bfff;
+  margin-bottom: 80px;
+  letter-spacing: 3px;
+  animation: glowText 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+    0% { text-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff; }
+    100% { text-shadow: 0 0 25px #00bfff, 0 0 70px #00bfff; }
+}
+
+
+.intro-button tw-link {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  padding: 20px 80px;
+  font-size: 28px;
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00bfff, 0 0 20px #00bfff;
+  box-shadow: 0 0 20px #00bfff;
+  transition: all 0.3s ease;
+}
+
+.intro-button tw-link:hover {
+  background: #00bfff;
+  color: #000;
+  box-shadow: 0 0 40px #00bfff, 0 0 100px #00bfff;
+  transform: scale(1.05);
+}
+
+.intro-button tw-link:active {
+  transform: scale(0.95);
+}
+
+.intro-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #021014 0%, #000814 60%, #00030a 100%);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+
+.intro-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(45deg, rgba(0,187,255,0.18) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0,187,255,0.18) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(0,187,255,0.10) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(0,187,255,0.10) 75%);
+  background-size: 80px 80px;           
+  background-position: 0 0, 0 0, 40px 40px, 40px 40px;
+  opacity: 0.85;                        
+  mix-blend-mode: screen;              
+  filter: blur(0.6px) contrast(1.05);   
+  transform: translateZ(0);
+  pointer-events: none;
+  animation: gridMove 14s linear infinite;
+}
+
+
+@keyframes gridMove {
+  from { background-position: 0 0, 0 0, 40px 40px, 40px 40px; }
+  to   { background-position: 160px 160px, -160px -160px, 200px 200px, -200px -200px; }
+}
+
+
+.intro-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(0,187,255,0.08) 0%, transparent 35%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 1;
+  animation: haloPulse 6s ease-in-out infinite alternate;
+}
+@keyframes haloPulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+.holo-panel { z-index: 2; }
+
+
+
