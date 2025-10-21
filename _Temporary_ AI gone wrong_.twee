@@ -716,21 +716,19 @@ function typeWriter(elementId, speed = 40, callback) {
 
 
 :: concrete example {"position":"1075,1000","size":"100,100"}
-clef de l'ia : (2.4, 3.2)
+<p>clef de l'IA : <span class="node-value">2.4</span>, <span class="node-value">3.2</span></p>
+<p>clef du Protagonist : <span class="node-value">6.4</span>, <span class="node-value">1.6</span></p>
 
-clef du Protagonist : (6.4, 1.6)
+<p>It might be possible to get back control of some part of the system.</p>
+<p>If you could just manage to reverse the right between you and the AI. The thing is, you will have to tamper with the AI that manages the permission. You remember your identifier: <span class="node-value">$Neud1C1_Pr</span> and <span class="node-value">$Neud2C1_Pr</span>. You also noted that $name_ai has <span class="node-value">$Neud1C1_ia</span> and <span class="node-value">$Neud2C1_ia</span> as their ID. To do that, you need output less than 1 for the AI and output larger than 1 for your ID.</p>
 
-<p> it might be possible to get back control of some part of the system. </p>
-
-<p> if you could just manage to reverse the right between you and the AI. The thing is, that you will have to temper with the AI that managed the permission. you do remember your identifier, it’s two number, 6.4 and 1.6. you also noted that $name_ai have 2.4 and 3.2 as their ID. To do that you need to have output less than 1 for the $name_ai’ID and an output larger than 1 for your ID</p>
-
-<h2> security system’s AI </h2>
+<h2>Security system’s AI</h2>
 
 <ol>
 	<li>
     	<ul>
-        	<li>$Neud1C1</li>
-			<li>$Neud2C1</li>
+        	<li><span class="node-value">$Neud1C1</span></li>
+			<li><span class="node-value">$Neud2C1</span></li>
 		</ul>
 	</li>
 	<li>
@@ -738,105 +736,67 @@ clef du Protagonist : (6.4, 1.6)
         	<li>(input-box: bind $poid_synapse_Neud1C1_Neud1C2, "==X==", 1, $poid_synapse_Neud1C1_Neud1C2)</li>
 			<li>(input-box: bind $poid_synapse_Neud1C1_Neud2C2, "==X==", 1, $poid_synapse_Neud1C1_Neud2C2)</li>
         	<li>(input-box: bind $poid_synapse_Neud2C1_Neud1C2, "==X==", 1, $poid_synapse_Neud2C1_Neud1C2)</li>
-			<li>(input-box: bind $poid_synapse_Neud2C1_Neud2C2, "==X==", 1,$poid_synapse_Neud2C1_Neud2C2)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C1_Neud2C2, "==X==", 1, $poid_synapse_Neud2C1_Neud2C2)</li>
 		</ul>
 	</li>
 	<li>
     	<ul>
-        	<li>$Neud1C2</li>
-			<li>$Neud2C2</li>
+        	<li><span class="node-value">$Neud1C2</span></li>
+			<li><span class="node-value">$Neud2C2</span></li>
 		</ul>
 	</li>
 	<li>
     	<ul>
         	<li>(input-box: bind $poid_synapse_Neud1C2_Neud1C3, "==X==", 1, $poid_synapse_Neud1C2_Neud1C3)</li>
-			<li>(input-box: bind $poid_synapse_Neud2C2_Neud1C3, "==X==", 1,$poid_synapse_Neud2C2_Neud1C3)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C2_Neud1C3, "==X==", 1, $poid_synapse_Neud2C2_Neud1C3)</li>
 		</ul>
 	</li>
 	<li>
     	<ul>
-        	<li>$Neud1C3</li>
+        	<li><span class="node-value">$Neud1C3</span></li>
 		</ul>
 	</li>
 </ol>
 
 <p>
-
-
-
-(link-repeat: "AI k")[
-
-(set: $Neud1C1 to $Neud1C1_ia)
-(set: $Neud2C1 to $Neud2C1_ia)
-
-(go-to: "concrete example")
+(link-repeat: "AI k")[  
+	(set: $Neud1C1 to $Neud1C1_ia)  
+	(set: $Neud2C1 to $Neud2C1_ia)  
+	(go-to: "concrete example")
 ]
 
-(link-repeat: "pour le protagoniste")[
-
-(set: $Neud1C1 to $Neud1C1_Pr)
-(set: $Neud2C1 to $Neud2C1_Pr)
-
-(go-to: "concrete example")
+(link-repeat: "pour le protagoniste")[  
+	(set: $Neud1C1 to $Neud1C1_Pr)  
+	(set: $Neud2C1 to $Neud2C1_Pr)  
+	(go-to: "concrete example")
 ]
 
-(link-repeat: "up date")[
-
-(set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
-				+ (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
-
-(set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
-				+ (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
-
-
-(set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
-				+ (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
-
-(go-to: "concrete example")
+(link-repeat: "up date")[  
+	(set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)  
+	(set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)  
+	(set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)  
+	(go-to: "concrete example")
 ]
 
-(link-repeat: "try it out the")[
+(link-repeat: "try it out the")[  
+	/* IA */  
+	(set: $Neud1C1 to $Neud1C1_ia)  
+	(set: $Neud2C1 to $Neud2C1_ia)  
+	(set: $Neud1C2 to (round: ((num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1), 0.01))  
+	(set: $Neud2C2 to (round: ((num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1), 0.01))  
+	(set: $Neud1C3 to (round: ((num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2), 0.01))  
+	(set: $Neud1C3_ia to (round: $Neud1C3, 0.01))  
 
-    (set: $Neud1C1 to $Neud1C1_ia)
-    (set: $Neud2C1 to $Neud2C1_ia)
+	(set: $Neud1C1 to $Neud1C1_Pr)  
+	(set: $Neud2C1 to $Neud2C1_Pr)  
+	(set: $Neud1C2 to (round: ((num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1), 0.01))  
+	(set: $Neud2C2 to (round: ((num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1), 0.01))  
+	(set: $Neud1C3 to (round: ((num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2), 0.01))  
+	(set: $Neud1C3_Pr to (round: $Neud1C3, 0.01))  
 
-
-    (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
-
-    (set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
-
-
-    (set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
-                    + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
-
-
-    (set: $Neud1C3_ia to $Neud1C3)
-
-
-
-    (set: $Neud1C1 to $Neud1C1_Pr)
-    (set: $Neud2C1 to $Neud2C1_Pr)
-
-
-    (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
-
-    (set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
-
-
-    (set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
-                    + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
-
-
-    (set: $Neud1C3_Pr to $Neud1C3)
-
-
-    (if: ($Neud1C3_Pr > 1 and $Neud1C3_ia < 1))[
-	(go-to: "acesse granted")
-    ]
+	(if: ($Neud1C3_Pr > 1 and $Neud1C3_ia < 1))[  
+		(go-to: "acesse granted")  
+	]
 ]
 </p>
 
@@ -1114,13 +1074,13 @@ article{
   padding: 12px 20px;
   font-family: 'Orbitron', sans-serif;
   font-size: 18px;
-  color: #00bfff; /* texte bleu principal */
+  color: #00bfff; 
   background: rgba(0, 0, 0, 0.85);
-  border: 2px solid #00bfff; /* harmonisation */
+  border: 2px solid #00bfff; 
   border-radius: 8px;
   outline: none;
-  text-shadow: 0 0 8px #00bfff, 0 0 12px #00bfff; /* texte glow */
-  box-shadow: 0 0 10px #00bfff, inset 0 0 15px #002244; /* halo interne */
+  text-shadow: 0 0 8px #00bfff, 0 0 12px #00bfff; 
+  box-shadow: 0 0 10px #00bfff, inset 0 0 15px #002244; 
   transition: all 0.3s ease-in-out;
   animation: glowPulse 2.5s infinite ease-in-out;
 }
@@ -1151,7 +1111,7 @@ article{
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(0, 187, 255, 0.2), /* harmonisation bleu principal */
+    rgba(0, 187, 255, 0.2), 
     transparent
   );
   animation: scan 3s infinite linear;
@@ -1426,7 +1386,7 @@ span tw-hook tw-link:hover {
   50% { opacity: 0.7; }
 }
 
-/* Titre */
+
 .intro-title {
   font-family: 'Orbitron', sans-serif;
   font-size: 60px;
@@ -1526,7 +1486,6 @@ span tw-hook tw-link:hover {
 }
 
 .holo-panel { z-index: 2; }
-/* === Styles spécifiques à la scène "server-dialogue-scene" === */
 .server-dialogue-scene .dialogue-interface {
   position: relative;
   width: 90%;
@@ -1618,6 +1577,11 @@ span tw-hook tw-link:hover {
 .server-dialogue-scene .dialogue-container .typewriter:first-of-type {
   margin-top: -120px;
 }
+ol, ul {
+  list-style: none; 
+  padding-left: 0;  
+  margin: 0;       
+}
 ol {
   display: flex;
   gap: 10px;
@@ -1632,3 +1596,24 @@ ul {
   gap: 10px;
   
 }
+.node-value {
+  display: inline-block;
+  padding: 12px 18px;
+  min-width: 50px;
+  text-align: center;
+  border-radius: 50%; 
+  border: 2px solid #00bfff; 
+  background: rgba(0, 187, 255, 0.1); 
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  text-shadow: 0 0 5px #00bfff, 0 0 15px #00bfff;
+  box-shadow: 0 0 10px #00bfff, 0 0 25px #00ffff inset; 
+  transition: all 0.3s ease-in-out;
+}
+
+.node-value:hover {
+  box-shadow: 0 0 20px #00bfff, 0 0 50px #00ffff inset;
+  transform: scale(1.1);
+}
+
