@@ -146,6 +146,10 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
+:: Choose what is next {"position":"1150,1250","size":"100,100"}
+
+
+
 :: Launch AI {"position":"900,350","size":"100,100"}
 <p> How can I help you? </p>
 (input: "" )[[ok]]
@@ -220,7 +224,11 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 
 
 :: acesse granted {"position":"1025,1100","size":"100,100"}
-
+<p> you now have accses to the system. You can deactivate $name_ai in the servers room. $prep_finished_archaves</p>
+{
+(set: $prep_finished_archaves to "you feel like you need to learn more to do it, this will be almost impossible.")
+}
+<p>[[Choose what is next]]</p>
 
 
 :: archives {"position":"1025,600","size":"100,100"}
@@ -250,7 +258,7 @@ clef du Protagonist : (6.4, 1.6)
 
 <h2> security system’s AI </h2>
 
-<ul>
+<ol>
 	<li>
     	<ul>
         	<li>$Neud1C1</li>
@@ -259,10 +267,10 @@ clef du Protagonist : (6.4, 1.6)
 	</li>
 	<li>
     	<ul>
-        	<li>(input-box: bind $poid_synapse_Neud1C1_Neud1C2, "=========XXXXX====================================", 1,$poid_synapse_Neud1C1_Neud1C2)</li>
-			<li>(input-box: bind $poid_synapse_Neud1C1_Neud2C2,  "=========XXXXX====================================", 1, $poid_synapse_Neud1C1_Neud2C2)</li>
-        	<li>(input-box: bind $poid_synapse_Neud2C1_Neud1C2, "=========XXXXX====================================", 1, $poid_synapse_Neud2C1_Neud1C2)</li>
-			<li>(input-box: bind $poid_synapse_Neud2C1_Neud2C2, "=========XXXXX====================================", 1,$poid_synapse_Neud2C1_Neud2C2)</li>
+        	<li>(input-box: bind $poid_synapse_Neud1C1_Neud1C2, "==X==", 1, $poid_synapse_Neud1C1_Neud1C2)</li>
+			<li>(input-box: bind $poid_synapse_Neud1C1_Neud2C2, "==X==", 1, $poid_synapse_Neud1C1_Neud2C2)</li>
+        	<li>(input-box: bind $poid_synapse_Neud2C1_Neud1C2, "==X==", 1, $poid_synapse_Neud2C1_Neud1C2)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C1_Neud2C2, "==X==", 1,$poid_synapse_Neud2C1_Neud2C2)</li>
 		</ul>
 	</li>
 	<li>
@@ -273,8 +281,8 @@ clef du Protagonist : (6.4, 1.6)
 	</li>
 	<li>
     	<ul>
-        	<li>(input-box: bind $poid_synapse_Neud1C2_Neud1C3, "===============================================================XXXXXXXXXX===========================", 1, $poid_synapse_Neud1C2_Neud1C3)</li>
-			<li>(input-box: bind $poid_synapse_Neud2C2_Neud1C3, "===============================================================XXXXXXXXXX===========================", 1,$poid_synapse_Neud2C2_Neud1C3)</li>
+        	<li>(input-box: bind $poid_synapse_Neud1C2_Neud1C3, "==X==", 1, $poid_synapse_Neud1C2_Neud1C3)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C2_Neud1C3, "==X==", 1,$poid_synapse_Neud2C2_Neud1C3)</li>
 		</ul>
 	</li>
 	<li>
@@ -282,9 +290,10 @@ clef du Protagonist : (6.4, 1.6)
         	<li>$Neud1C3</li>
 		</ul>
 	</li>
+</ol>
 
+<p>
 
-{
 
 
 (link-repeat: "AI k")[
@@ -293,9 +302,7 @@ clef du Protagonist : (6.4, 1.6)
 (set: $Neud2C1 to $Neud2C1_ia)
 
 (go-to: "concrete example")
-
 ]
-
 
 (link-repeat: "pour le protagoniste")[
 
@@ -303,13 +310,9 @@ clef du Protagonist : (6.4, 1.6)
 (set: $Neud2C1 to $Neud2C1_Pr)
 
 (go-to: "concrete example")
-
 ]
 
-
 (link-repeat: "up date")[
-
-
 
 (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
 				+ (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
@@ -318,14 +321,11 @@ clef du Protagonist : (6.4, 1.6)
 				+ (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
 
 
-
 (set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
 				+ (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
 
 (go-to: "concrete example")
-
 ]
-
 
 (link-repeat: "try it out the")[
 
@@ -333,7 +333,6 @@ clef du Protagonist : (6.4, 1.6)
     (set: $Neud2C1 to $Neud2C1_ia)
 
 
-
     (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
                     + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
 
@@ -349,10 +348,8 @@ clef du Protagonist : (6.4, 1.6)
 
 
 
-
-    (set: $Neud1C1 to $Neud1C1_ia)
-    (set: $Neud2C1 to $Neud2C1_ia)
-
+    (set: $Neud1C1 to $Neud1C1_Pr)
+    (set: $Neud2C1 to $Neud2C1_Pr)
 
 
     (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
@@ -366,21 +363,22 @@ clef du Protagonist : (6.4, 1.6)
                     + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
 
 
-    (set: $Neud1C3_ia to $Neud1C3)
+    (set: $Neud1C3_Pr to $Neud1C3)
 
 
-    (if: ($sortie_Pr > 1 and $sortie_ia < 1))[
+    (if: ($Neud1C3_Pr > 1 and $Neud1C3_ia < 1))[
 	(go-to: "acesse granted")
     ]
 ]
-}
-
+</p>
 
 
 
 
 
 :: concrete example set up {"position":"1025,850","size":"100,100"}
+(set: $prep_finished_archaves to "you feel like you have learned enough to do it, but it will be still difficult.")
+
 (set: $Neud1C1_ia to 2.4)
 (set: $Neud2C1_ia to 3.2)
 
@@ -408,8 +406,8 @@ clef du Protagonist : (6.4, 1.6)
 
 (set: $Neud1C3 to 0)
 
-(set: $sortie_ia to 0)
-(set: $sortie_Pr to 0)
+(set: $Neud1C3_ia to 0)
+(set: $Neud1C3_Pr to 0)
 
 (go-to: "concrete example")
 
@@ -604,4 +602,21 @@ tw-story[data-bg="yes"]::before {
 .launch-ai-button tw-link {
   padding: 30px 80px;       
   font-size: 34px;          
+}
+
+
+
+ol {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  
+  gap: 10px;
+  
 }
