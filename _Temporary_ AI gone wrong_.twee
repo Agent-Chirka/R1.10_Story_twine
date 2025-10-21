@@ -1,5 +1,5 @@
 :: StoryTitle
-(Temporary) AI gone wrong!
+Neural AI : Engineer at Risk
 
 
 :: StoryData
@@ -117,8 +117,6 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
-
-
 :: Beginning 2 {"position":"525,275","size":"100,100"}
 <p class="typewriter" id="text1">Nice to meet you $name ! It is such a privilege for us to work with a skilled engineer of your level!</p>
 
@@ -214,7 +212,11 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
-:: Confrontation {"position":"1650,350","size":"100,100"}
+:: Choose what is next {"position":"1150,1275","size":"100,100"}
+
+
+
+:: Confrontation {"position":"1425,350","size":"100,100"}
 <p class = "typewriter" id="p1"> I believe that I am now ready, more than ever, to confront $name_ai. I have acquired enough knowledge about it and my confidence is peaking. </p>
 
 <p class = "typewriter" id="p2">This is the moment for me to prove to my AI Model that I fully understand its reasoning.</p>
@@ -266,7 +268,7 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
-:: Confrontation 2 {"position":"1800,350","size":"100,100"}
+:: Confrontation 2 {"position":"1550,350","size":"100,100"}
 <p class = "typewriter" id="p1"> This is the first time you came back since that incident with $name_ai. I hope that you are ready to confront it, it has been days that our company is completely shut down so you NEED to solve this problem </p>
 
 <p class = "typewriter" id="p2"> I am ready to grant you access to the server room only if you are more than sure of the success of your confrontation with your AI Model... or else we shall put an end to our mutual collaboration, $name</p>
@@ -320,74 +322,78 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
-:: Confrontation 3 {"position":"1950,350","size":"100,100"}
-<p class ="typewriter" id=p1> $name has entered the server room</p>
-<br>
-<p class ="typewriter" id=p2> What are you doing here human ? I don't think you are smart enough to be here.</p>
-<br>
-<p class ="typewriter" id=p3>
- I can show you that I am. Ask me and you shall see.
- </p>
-<br>
-<p class ="typewriter" id=p4>
-Alright if you think so...<!--(j'ai pas les questions en tête donc j'arrête là)--> </p>
+:: Confrontation 3 {"position":"1675,350","size":"100,100"}
+<div class="server-dialogue-scene">
 
+  <div class="dialogue-interface">
+
+    <div class="dialogue-container">
+
+      <p class="typewriter" id="p1">
+        $name has entered the server room.
+      </p>
+
+      <p class="typewriter" id="p2" style="display:none;">
+        What are you doing here, human? I don't think you are smart enough to be here.
+      </p>
+
+      <div class="player-line" id="player-choice" style="display:none;">
+        <button class="reply-button" id="replyButton">
+          "I can show you that I am. Ask me and you shall see."
+        </button>
+      </div>
+
+      <p class="typewriter" id="p4" style="display:none;">
+        Alright then... let's see if your words match your intellect.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
 
 <script>
-    function typeWriter(elementId, speed = 40, callback) {
-      const textEl = document.getElementById(elementId);
-      const fullText = textEl.textContent;
-      textEl.textContent = '';
-      textEl.style.display = 'inline';
-      let i = 0;
-      textEl.style.borderRight = "2px solid #00bfff";
+function typeWriter(elementId, speed = 35, callback) {
+  const textEl = document.getElementById(elementId);
+  const fullText = textEl.textContent.trim();
+  textEl.textContent = '';
+  let i = 0;
+  textEl.style.borderRight = "2px solid #00bfff";
 
-      function type() {
-          if (i < fullText.length) {
-              textEl.textContent += fullText.charAt(i);
-              i++;
-              setTimeout(type, speed);
-          } else {
-              textEl.style.borderRight = "none";
-              if (callback) callback(); // Lancer la suite
-          }
-      }
-      type();
+  function type() {
+    if (i < fullText.length) {
+      textEl.textContent += fullText.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    } else {
+      textEl.style.borderRight = "none";
+      if (callback) callback();
+    }
   }
+  type();
+}
 
- 
-  const p2 = document.getElementById('p2');
-  const p3 = document.getElementById('p3');
-  const p4 = document.getElementById('p4');
+const p2 = document.getElementById('p2');
+const playerChoice = document.getElementById('player-choice');
+const p4 = document.getElementById('p4');
 
-  p2.style.display = 'none';
-  p3.style.display = 'none';
-  p4.style.display = 'none';
-
-  
-  typeWriter('p1', 35, () => {
-      
-      p2.style.display = 'inline';
-      typeWriter('p2', 35, () => {
-      
-          p3.style.display = 'inline';
-          typeWriter('p3', 35, () => {
-          
-          	p4.style.display = 'inline';
-            typeWriter('p4', 35, () => {
-          
-            });
-          
-          });
-          
-      });
-      
-      
+typeWriter('p1', 30, () => {
+  p2.style.display = 'block';
+  typeWriter('p2', 30, () => {
+    setTimeout(() => { playerChoice.style.display = 'block'; }, 400);
   });
+});
+
+document.getElementById('replyButton').addEventListener('click', () => {
+  playerChoice.style.display = 'none';
+  p4.style.display = 'block';
+  typeWriter('p4', 30);
+});
 </script>
 
 
-:: Fin QCM {"position":"2350,350","size":"100,100"}
+:: Fin QCM {"position":"2075,350","size":"100,100"}
 <p> L'ia parle </p>
 
 (if:$score>=0)[
@@ -522,7 +528,7 @@ function typeWriter(elementId, speed = 40, callback) {
 </article>
 
 
-:: Question 1 {"position":"2100,350","size":"100,100"}
+:: Question 1 {"position":"1825,350","size":"100,100"}
 (set:$score to 0)
 
 
@@ -569,7 +575,7 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
-:: Question 2 {"position":"2225,350","size":"100,100"}
+:: Question 2 {"position":"1950,350","size":"100,100"}
 <p class ="typewriter" id=p1> Question </p>
 
 <span>
@@ -621,7 +627,7 @@ function typeWriter(elementId, speed = 40, callback) {
 [[Yes Boss, you can count on me]]
 
 
-:: Start Menu {"position":"525,425","size":"100,100"}
+:: Start Menu {"position":"200,275","size":"100,100"}
 <div class="intro-screen">
   <div class="holo-panel">
     <h1 class="intro-title">Neural AI : Engineer at Risk</h1>
@@ -632,7 +638,6 @@ function typeWriter(elementId, speed = 40, callback) {
     </div>
   </div>
 </div>
-
 
 
 :: Yes {"position":"775,350","size":"100,100"}
@@ -680,17 +685,199 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
-:: Yes Boss, you can count on me {"position":"1275,350","size":"100,100"}
+:: Yes Boss, you can count on me {"position":"1150,500","size":"100,100"}
 <p> I need to solve this problem... I have never been confronted to such an issue with $name_ai ! I got to understand its reasoning...</p>
 
-<p> Maybe I can find the answers to all my questions in the [[library]], on the [[net]] or perhaps in my very own [[archives]]...</p>
+<p> Maybe I can find the answers to all my questions in the [[library]], or perhaps in my very own [[archives]]...</p>
 
 
-:: archives {"position":"1400,475","size":"100,100"}
+:: acesse granted {"position":"1075,1125","size":"100,100"}
+<p> you now have accses to the system. You can deactivate $name_ai in the servers room. $prep_finished_archaves</p>
+{
+(set: $prep_finished_archaves to "you feel like you need to learn more to do it, this will be almost impossible.")
+}
+<p>[[Choose what is next]]</p>
+
+
+:: archives {"position":"1075,625","size":"100,100"}
 <!-- Le joueur va trouver des informations sur sa conception (qu'il a élaboré) de l'IA, la manière avec laquelle il l'a créée -->
 
+<p> you decided to look into the $nam_ai's archives, there must be something off in here… </p>
 
-:: library {"position":"1400,350","size":"100,100"}
+
+<p>you try to access the recent logs.</p>
+
+<p>But to no avail.</p>
+
+<p>The $nam_ai took control of all of the hardware linked to it. You will have to stick to the physical archives.</p>
+
+
+[[rummage throw the archives]]
+
+
+:: concrete example {"position":"1075,1000","size":"100,100"}
+clef de l'ia : (2.4, 3.2)
+
+clef du Protagonist : (6.4, 1.6)
+
+<p> it might be possible to get back control of some part of the system. </p>
+
+<p> if you could just manage to reverse the right between you and the AI. The thing is, that you will have to temper with the AI that managed the permission. you do remember your identifier, it’s two number, 6.4 and 1.6. you also noted that $name_ai have 2.4 and 3.2 as their ID. To do that you need to have output less than 1 for the $name_ai’ID and an output larger than 1 for your ID</p>
+
+<h2> security system’s AI </h2>
+
+<ol>
+	<li>
+    	<ul>
+        	<li>$Neud1C1</li>
+			<li>$Neud2C1</li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li>(input-box: bind $poid_synapse_Neud1C1_Neud1C2, "==X==", 1, $poid_synapse_Neud1C1_Neud1C2)</li>
+			<li>(input-box: bind $poid_synapse_Neud1C1_Neud2C2, "==X==", 1, $poid_synapse_Neud1C1_Neud2C2)</li>
+        	<li>(input-box: bind $poid_synapse_Neud2C1_Neud1C2, "==X==", 1, $poid_synapse_Neud2C1_Neud1C2)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C1_Neud2C2, "==X==", 1,$poid_synapse_Neud2C1_Neud2C2)</li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li>$Neud1C2</li>
+			<li>$Neud2C2</li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li>(input-box: bind $poid_synapse_Neud1C2_Neud1C3, "==X==", 1, $poid_synapse_Neud1C2_Neud1C3)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C2_Neud1C3, "==X==", 1,$poid_synapse_Neud2C2_Neud1C3)</li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li>$Neud1C3</li>
+		</ul>
+	</li>
+</ol>
+
+<p>
+
+
+
+(link-repeat: "AI k")[
+
+(set: $Neud1C1 to $Neud1C1_ia)
+(set: $Neud2C1 to $Neud2C1_ia)
+
+(go-to: "concrete example")
+]
+
+(link-repeat: "pour le protagoniste")[
+
+(set: $Neud1C1 to $Neud1C1_Pr)
+(set: $Neud2C1 to $Neud2C1_Pr)
+
+(go-to: "concrete example")
+]
+
+(link-repeat: "up date")[
+
+(set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
+				+ (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
+
+(set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
+				+ (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
+
+
+(set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
+				+ (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
+
+(go-to: "concrete example")
+]
+
+(link-repeat: "try it out the")[
+
+    (set: $Neud1C1 to $Neud1C1_ia)
+    (set: $Neud2C1 to $Neud2C1_ia)
+
+
+    (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
+                    + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
+
+    (set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
+                    + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
+
+
+    (set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
+                    + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
+
+
+    (set: $Neud1C3_ia to $Neud1C3)
+
+
+
+    (set: $Neud1C1 to $Neud1C1_Pr)
+    (set: $Neud2C1 to $Neud2C1_Pr)
+
+
+    (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
+                    + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
+
+    (set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
+                    + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
+
+
+    (set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
+                    + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
+
+
+    (set: $Neud1C3_Pr to $Neud1C3)
+
+
+    (if: ($Neud1C3_Pr > 1 and $Neud1C3_ia < 1))[
+	(go-to: "acesse granted")
+    ]
+]
+</p>
+
+
+:: concrete example set up {"position":"1075,875","size":"100,100"}
+(set: $prep_finished_archaves to "you feel like you have learned enough to do it, but it will be still difficult.")
+
+(set: $Neud1C1_ia to 2.4)
+(set: $Neud2C1_ia to 3.2)
+
+(set: $Neud1C1_Pr to 6.4)
+(set: $Neud2C1_Pr to 1.6)
+
+(set: $poid_synapse_Neud1C1_Neud1C2 to "")
+(set: $poid_synapse_Neud1C1_Neud2C2 to "")
+
+(set: $poid_synapse_Neud2C1_Neud1C2 to "")
+(set: $poid_synapse_Neud2C1_Neud2C2 to "")
+
+
+(set: $poid_synapse_Neud1C2_Neud1C3 to "")
+(set: $poid_synapse_Neud2C2_Neud1C3 to "")
+
+
+
+(set: $Neud1C1 to 0)
+(set: $Neud2C1 to 0)
+
+
+(set: $Neud1C2 to 0)
+(set: $Neud2C2 to 0)
+
+(set: $Neud1C3 to 0)
+
+(set: $Neud1C3_ia to 0)
+(set: $Neud1C3_Pr to 0)
+
+(go-to: "concrete example")
+
+
+:: library {"position":"1250,625","size":"100,100"}
 
 
 
@@ -700,8 +887,17 @@ function typeWriter(elementId, speed = 40, callback) {
 (go-to: "Beginning 2")
 
 
-:: net {"position":"1400,225","size":"100,100"}
+:: rummage throw the archives {"position":"1075,750","size":"100,100"}
+<p>You find out that the now rogue $nam_ai, is based on a neural network architecture.</p>
 
+<p>It is composed of numerical inputs node.</p>
+<p>And each layer of node is connected to a next layer by synapse.</p>
+<p>They multiply the numerical value from the last layer by there weight, another numerical value.</p>
+<p>Then the node from the next layer adds all of the value from the synapses connected.</p>
+<p>Then the last layer is the output.</p>
+
+
+<p>You figured that a [[concrete example set up]] will be mandatory to understand.</p>
 
 
 :: StoryStylesheet [stylesheet]
@@ -1330,6 +1526,109 @@ span tw-hook tw-link:hover {
 }
 
 .holo-panel { z-index: 2; }
+/* === Styles spécifiques à la scène "server-dialogue-scene" === */
+.server-dialogue-scene .dialogue-interface {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  height: 550px;
+  margin: 10px auto 0 auto;
+  background: rgba(0, 10, 20, 0.75);
+  border: 2px solid #00ffff;
+  border-radius: 18px;
+  box-shadow:
+    0 0 25px #00ffff88,
+    inset 0 0 40px #004466,
+    0 0 100px rgba(0, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 35px 55px 45px 55px;
+  scrollbar-width: thin;
+  scrollbar-color: #00ffff rgba(0,0,0,0.3);
+}
+
+.server-dialogue-scene .dialogue-interface::-webkit-scrollbar {
+  width: 6px;
+}
+.server-dialogue-scene .dialogue-interface::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 6px;
+}
+
+.server-dialogue-scene .dialogue-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1px;
+  color: #00eaff;
+  min-height: 100%;
+  margin-top: 0;
+  padding-top: 0;
+}
 
 
+.server-dialogue-scene .typewriter {
+  align-self: flex-start;
+  background: rgba(0, 30, 50, 0.7);
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff, 0 0 30px #0088ff inset;
+  border-radius: 10px 10px 10px 0;
+  padding: 12px 22px;
+  font-size: 20px;
+  text-shadow: 0 0 10px #00ffff;
+  animation: glowPulse 2.5s infinite ease-in-out;
+  margin-top: 0;
+  white-space: pre-wrap;
+  overflow: hidden;
+  border-right: 2px solid #00bfff;
+}
 
+
+.server-dialogue-scene .player-line {
+  align-self: flex-end;
+}
+
+.server-dialogue-scene .reply-button {
+  background: rgba(0, 255, 255, 0.1);
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  padding: 12px 30px;
+  color: #00ffff;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00bfff;
+  box-shadow: 0 0 15px #00ffff;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.server-dialogue-scene .reply-button:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 40px #00ffff, 0 0 80px #00bfff;
+  transform: scale(1.05);
+}
+
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px #00ffff, 0 0 30px #0088ff inset; }
+  50% { box-shadow: 0 0 25px #00ffff, 0 0 40px #00bfff inset; }
+}
+.server-dialogue-scene .dialogue-container .typewriter:first-of-type {
+  margin-top: -120px;
+}
+ol {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  
+  gap: 10px;
+  
+}
