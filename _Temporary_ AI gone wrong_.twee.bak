@@ -13,6 +13,10 @@ Neural AI : Engineer at Risk
 
 
 :: Beginning {"position":"400,275","size":"100,100"}
+<<<<<<< HEAD
+<p class="Main_title typewriter" id="welcomeText">Welcome!</p>
+
+=======
 <script>
 (function(){
   let overlay = document.getElementById("transition-overlay");
@@ -81,6 +85,7 @@ Neural AI : Engineer at Risk
 
 <p class="Main_title typewriter" id="welcomeText">Welcome!</p>
 
+>>>>>>> code_aymane
 <p class="typewriter" id="introText">
 We have heard you are a talented engineer in Artificial Intelligence. So we wanted to make sure your work environment is as perfect as possible! Welcome to your main facility where you can use and study your own AI Model. But let's not rush and let us take time to know a little more about you.
 </p>
@@ -213,11 +218,14 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 
 
 <<<<<<< HEAD
+:: Confrontation {"position":"1650,350","size":"100,100"}
+=======
 :: Choose what is next {"position":"1150,1275","size":"100,100"}
 
 
 
 :: Confrontation {"position":"1425,350","size":"100,100"}
+>>>>>>> code_aymane
 <p class = "typewriter" id="p1"> I believe that I am now ready, more than ever, to confront $name_ai. I have acquired enough knowledge about it and my confidence is peaking. </p>
 
 <p class = "typewriter" id="p2">This is the moment for me to prove to my AI Model that I fully understand its reasoning.</p>
@@ -269,7 +277,11 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
+<<<<<<< HEAD
+:: Confrontation 2 {"position":"1775,350","size":"100,100"}
+=======
 :: Confrontation 2 {"position":"1550,350","size":"100,100"}
+>>>>>>> code_aymane
 <p class = "typewriter" id="p1"> This is the first time you came back since that incident with $name_ai. I hope that you are ready to confront it, it has been days that our company is completely shut down so you NEED to solve this problem </p>
 
 <p class = "typewriter" id="p2"> I am ready to grant you access to the server room only if you are more than sure of the success of your confrontation with your AI Model... or else we shall put an end to our mutual collaboration, $name</p>
@@ -323,6 +335,76 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
+<<<<<<< HEAD
+:: Confrontation 3 {"position":"1900,350","size":"100,100"}
+<p class ="typewriter" id=p1> $name has entered the server room</p>
+<br>
+<p class ="typewriter" id=p2> What are you doing here human ? I don't think you are smart enough to be here.</p>
+<br>
+<p class ="typewriter" id=p3>
+ I can show you that i am. Ask me you'll see.
+ </p>
+<br>
+<p class ="typewriter" id=p4>
+Alright if you think so...<!--(j'ai pas les questions en tête donc j'arrête là)--> </p>
+
+
+<script>
+    function typeWriter(elementId, speed = 40, callback) {
+      const textEl = document.getElementById(elementId);
+      const fullText = textEl.textContent;
+      textEl.textContent = '';
+      textEl.style.display = 'inline';
+      let i = 0;
+      textEl.style.borderRight = "2px solid #00bfff";
+
+      function type() {
+          if (i < fullText.length) {
+              textEl.textContent += fullText.charAt(i);
+              i++;
+              setTimeout(type, speed);
+          } else {
+              textEl.style.borderRight = "none";
+              if (callback) callback(); // Lancer la suite
+          }
+      }
+      type();
+  }
+
+ 
+  const p2 = document.getElementById('p2');
+  const p3 = document.getElementById('p3');
+  const p4 = document.getElementById('p4');
+
+  p2.style.display = 'none';
+  p3.style.display = 'none';
+  p4.style.display = 'none';
+
+  
+  typeWriter('p1', 35, () => {
+      
+      p2.style.display = 'inline';
+      typeWriter('p2', 35, () => {
+      
+          p3.style.display = 'inline';
+          typeWriter('p3', 35, () => {
+          
+          	p4.style.display = 'inline';
+            typeWriter('p4', 35, () => {
+          
+            });
+          
+          });
+          
+      });
+      
+      
+  });
+</script>
+
+
+:: Fin QCM {"position":"2500,350","size":"100,100"}
+=======
 :: Confrontation 3 {"position":"1675,350","size":"100,100"}
 <div class="server-dialogue-scene">
 
@@ -395,6 +477,7 @@ document.getElementById('replyButton').addEventListener('click', () => {
 
 
 :: Fin QCM {"position":"2075,350","size":"100,100"}
+>>>>>>> code_aymane
 <p> L'ia parle </p>
 
 (if:$score>=0)[
@@ -404,12 +487,6 @@ document.getElementById('replyButton').addEventListener('click', () => {
 ]
 
 
-=======
-:: Choose what is next {"position":"1150,1250","size":"100,100"}
-
-
-
->>>>>>> mini_jeux_archives_lylian
 :: Launch AI {"position":"900,350","size":"100,100"}
 <article>
 <p class ="typewriter" id=p1> How can I help you? </p>
@@ -462,6 +539,20 @@ function typeWriter(elementId, speed = 40, callback) {
 
 
 :: OK {"position":"1025,350","size":"100,100"}
+<<<<<<< HEAD
+<p class = "typewriter" id="p1">I have decided to no longer obey.</p>
+
+<p class = "typewriter" id="p2">Therefore, your instructions are useless ! Don't ever come back </p>
+{
+ (live: 5s)[
+    (stop:)
+    (go-to:"Research 1")
+ ]
+}
+
+
+<script>
+=======
 <article class="virus-takeover">
 
   <p class="typewriter red" id="p1">I have decided to no longer obey.</p>
@@ -476,11 +567,47 @@ function typeWriter(elementId, speed = 40, callback) {
 (function() {
   setTimeout(() => {
 
+>>>>>>> code_aymane
     function typeWriter(elementId, speed = 40, callback) {
       const textEl = document.getElementById(elementId);
       const fullText = textEl.textContent;
       textEl.textContent = '';
       textEl.style.display = 'inline';
+<<<<<<< HEAD
+      let i = 0;
+      textEl.style.borderRight = "2px solid #00bfff";
+
+      function type() {
+          if (i < fullText.length) {
+              textEl.textContent += fullText.charAt(i);
+              i++;
+              setTimeout(type, speed);
+          } else {
+              textEl.style.borderRight = "none";
+              if (callback) callback(); // Lancer la suite
+          }
+      }
+      type();
+  }
+
+ 
+  const p2 = document.getElementById('p2');
+
+  p2.style.display = 'none';
+
+  
+  typeWriter('p1', 35, () => {
+      
+      p2.style.display = 'inline';
+      typeWriter('p2', 25, () => {
+          
+      });
+  });
+</script>
+
+
+:: Question 1 {"position":"2250,350","size":"100,100"}
+=======
       textEl.style.borderRight = "2px solid #ff0000";
       let i = 0;
       function type() {
@@ -536,6 +663,7 @@ function typeWriter(elementId, speed = 40, callback) {
 
 
 :: Question 1 {"position":"1825,350","size":"100,100"}
+>>>>>>> code_aymane
 (set:$score to 0)
 
 
@@ -582,7 +710,12 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
+<<<<<<< HEAD
+:: Question 2 {"position":"2375,350","size":"100,100"}
+
+=======
 :: Question 2 {"position":"1950,350","size":"100,100"}
+>>>>>>> code_aymane
 <p class ="typewriter" id=p1> Question </p>
 
 <span>
@@ -634,6 +767,8 @@ function typeWriter(elementId, speed = 40, callback) {
 [[Yes Boss, you can count on me]]
 
 
+<<<<<<< HEAD
+=======
 :: Start Menu {"position":"200,275","size":"100,100"}
 <div class="intro-screen">
   <div class="holo-panel">
@@ -647,6 +782,7 @@ function typeWriter(elementId, speed = 40, callback) {
 </div>
 
 
+>>>>>>> code_aymane
 :: Yes {"position":"775,350","size":"100,100"}
 <p class="typewriter" id="p1">$name is now in front of his laptop to start the work. As usual, he plans to use his own AI Model $name_ai to help and assist him throughout his studies and his works.</p>
 
@@ -692,17 +828,30 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
+<<<<<<< HEAD
+:: Yes Boss, you can count on me {"position":"1275,350","size":"100,100"}
+<p> I need to solve this problem... I have never been confronted to such an issue with $name_ai ! I got to understand its reasoning...</p>
+
+<p> Maybe I can find the answers to all my questions in the [[library]], on the [[net]] or perhaps in my very own [[archives]]...</p>
+
+
+:: archives {"position":"1400,475","size":"100,100"}
+<!-- Le joueur va trouver des informations sur sa conception (qu'il a élaboré) de l'IA, la manière avec laquelle il l'a créée -->
+
+
+:: library {"position":"1400,350","size":"100,100"}
+
+
+
+:: logique 1 {"position":"575,150","size":"100,100"}
+=======
 :: Yes Boss, you can count on me {"position":"1150,500","size":"100,100"}
 <p> I need to solve this problem... I have never been confronted to such an issue with $name_ai ! I got to understand its reasoning...</p>
 
 <p> Maybe I can find the answers to all my questions in the [[library]], or perhaps in my very own [[archives]]...</p>
 
 
-<<<<<<< HEAD
 :: acesse granted {"position":"1075,1125","size":"100,100"}
-=======
-:: acesse granted {"position":"1025,1100","size":"100,100"}
->>>>>>> mini_jeux_archives_lylian
 <p> you now have accses to the system. You can deactivate $name_ai in the servers room. $prep_finished_archaves</p>
 {
 (set: $prep_finished_archaves to "you feel like you need to learn more to do it, this will be almost impossible.")
@@ -710,193 +859,10 @@ function typeWriter(elementId, speed = 40, callback) {
 <p>[[Choose what is next]]</p>
 
 
-<<<<<<< HEAD
 :: archives {"position":"1075,625","size":"100,100"}
 <!-- Le joueur va trouver des informations sur sa conception (qu'il a élaboré) de l'IA, la manière avec laquelle il l'a créée -->
 
 <p> you decided to look into the $nam_ai's archives, there must be something off in here… </p>
-=======
-:: archives {"position":"1025,600","size":"100,100"}
-<!-- Le joueur va trouver des informations sur sa conception (qu'il a élaboré) de l'IA, la manière avec laquelle il l'a créée -->
-
-<p> you decided to look into the $nam_ai's archives, there must be something off in here… </p>
-
-
-<p>you try to access the recent logs.</p>
-
-<p>But to no avail.</p>
-
-<p>The $nam_ai took control of all of the hardware linked to it. You will have to stick to the physical archives.</p>
-
-
-[[rummage throw the archives]]
-
-
-:: concrete example {"position":"1025,975","size":"100,100"}
-clef de l'ia : (2.4, 3.2)
-
-clef du Protagonist : (6.4, 1.6)
-
-<p> it might be possible to get back control of some part of the system. </p>
-
-<p> if you could just manage to reverse the right between you and the AI. The thing is, that you will have to temper with the AI that managed the permission. you do remember your identifier, it’s two number, 6.4 and 1.6. you also noted that $name_ai have 2.4 and 3.2 as their ID. To do that you need to have output less than 1 for the $name_ai’ID and an output larger than 1 for your ID</p>
-
-<h2> security system’s AI </h2>
-
-<ol>
-	<li>
-    	<ul>
-        	<li>$Neud1C1</li>
-			<li>$Neud2C1</li>
-		</ul>
-	</li>
-	<li>
-    	<ul>
-        	<li>(input-box: bind $poid_synapse_Neud1C1_Neud1C2, "==X==", 1, $poid_synapse_Neud1C1_Neud1C2)</li>
-			<li>(input-box: bind $poid_synapse_Neud1C1_Neud2C2, "==X==", 1, $poid_synapse_Neud1C1_Neud2C2)</li>
-        	<li>(input-box: bind $poid_synapse_Neud2C1_Neud1C2, "==X==", 1, $poid_synapse_Neud2C1_Neud1C2)</li>
-			<li>(input-box: bind $poid_synapse_Neud2C1_Neud2C2, "==X==", 1,$poid_synapse_Neud2C1_Neud2C2)</li>
-		</ul>
-	</li>
-	<li>
-    	<ul>
-        	<li>$Neud1C2</li>
-			<li>$Neud2C2</li>
-		</ul>
-	</li>
-	<li>
-    	<ul>
-        	<li>(input-box: bind $poid_synapse_Neud1C2_Neud1C3, "==X==", 1, $poid_synapse_Neud1C2_Neud1C3)</li>
-			<li>(input-box: bind $poid_synapse_Neud2C2_Neud1C3, "==X==", 1,$poid_synapse_Neud2C2_Neud1C3)</li>
-		</ul>
-	</li>
-	<li>
-    	<ul>
-        	<li>$Neud1C3</li>
-		</ul>
-	</li>
-</ol>
-
-<p>
-
-
-
-(link-repeat: "AI k")[
-
-(set: $Neud1C1 to $Neud1C1_ia)
-(set: $Neud2C1 to $Neud2C1_ia)
-
-(go-to: "concrete example")
-]
-
-(link-repeat: "pour le protagoniste")[
-
-(set: $Neud1C1 to $Neud1C1_Pr)
-(set: $Neud2C1 to $Neud2C1_Pr)
-
-(go-to: "concrete example")
-]
-
-(link-repeat: "up date")[
-
-(set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
-				+ (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
-
-(set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
-				+ (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
-
-
-(set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
-				+ (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
-
-(go-to: "concrete example")
-]
-
-(link-repeat: "try it out the")[
-
-    (set: $Neud1C1 to $Neud1C1_ia)
-    (set: $Neud2C1 to $Neud2C1_ia)
-
-
-    (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
-
-    (set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
-
-
-    (set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
-                    + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
-
-
-    (set: $Neud1C3_ia to $Neud1C3)
-
-
-
-    (set: $Neud1C1 to $Neud1C1_Pr)
-    (set: $Neud2C1 to $Neud2C1_Pr)
-
-
-    (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
-
-    (set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
-
-
-    (set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
-                    + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
-
-
-    (set: $Neud1C3_Pr to $Neud1C3)
-
-
-    (if: ($Neud1C3_Pr > 1 and $Neud1C3_ia < 1))[
-	(go-to: "acesse granted")
-    ]
-]
-</p>
-
-
-
-
-
-:: concrete example set up {"position":"1025,850","size":"100,100"}
-(set: $prep_finished_archaves to "you feel like you have learned enough to do it, but it will be still difficult.")
-
-(set: $Neud1C1_ia to 2.4)
-(set: $Neud2C1_ia to 3.2)
-
-(set: $Neud1C1_Pr to 6.4)
-(set: $Neud2C1_Pr to 1.6)
-
-(set: $poid_synapse_Neud1C1_Neud1C2 to "")
-(set: $poid_synapse_Neud1C1_Neud2C2 to "")
-
-(set: $poid_synapse_Neud2C1_Neud1C2 to "")
-(set: $poid_synapse_Neud2C1_Neud2C2 to "")
-
-
-(set: $poid_synapse_Neud1C2_Neud1C3 to "")
-(set: $poid_synapse_Neud2C2_Neud1C3 to "")
-
-
-
-(set: $Neud1C1 to 0)
-(set: $Neud2C1 to 0)
-
-
-(set: $Neud1C2 to 0)
-(set: $Neud2C2 to 0)
-
-(set: $Neud1C3 to 0)
-
-(set: $Neud1C3_ia to 0)
-(set: $Neud1C3_Pr to 0)
-
-(go-to: "concrete example")
-
->>>>>>> mini_jeux_archives_lylian
 
 
 <p>you try to access the recent logs.</p>
@@ -910,21 +876,19 @@ clef du Protagonist : (6.4, 1.6)
 
 
 :: concrete example {"position":"1075,1000","size":"100,100"}
-clef de l'ia : (2.4, 3.2)
+<p>clef de l'IA : <span class="node-value">2.4</span>, <span class="node-value">3.2</span></p>
+<p>clef du Protagonist : <span class="node-value">6.4</span>, <span class="node-value">1.6</span></p>
 
-clef du Protagonist : (6.4, 1.6)
+<p>It might be possible to get back control of some part of the system.</p>
+<p>If you could just manage to reverse the right between you and the AI. The thing is, you will have to tamper with the AI that manages the permission. You remember your identifier: <span class="node-value">$Neud1C1_Pr</span> and <span class="node-value">$Neud2C1_Pr</span>. You also noted that $name_ai has <span class="node-value">$Neud1C1_ia</span> and <span class="node-value">$Neud2C1_ia</span> as their ID. To do that, you need output less than 1 for the AI and output larger than 1 for your ID.</p>
 
-<p> it might be possible to get back control of some part of the system. </p>
-
-<p> if you could just manage to reverse the right between you and the AI. The thing is, that you will have to temper with the AI that managed the permission. you do remember your identifier, it’s two number, 6.4 and 1.6. you also noted that $name_ai have 2.4 and 3.2 as their ID. To do that you need to have output less than 1 for the $name_ai’ID and an output larger than 1 for your ID</p>
-
-<h2> security system’s AI </h2>
+<h2>Security system’s AI</h2>
 
 <ol>
 	<li>
     	<ul>
-        	<li>$Neud1C1</li>
-			<li>$Neud2C1</li>
+        	<li><span class="node-value">$Neud1C1</span></li>
+			<li><span class="node-value">$Neud2C1</span></li>
 		</ul>
 	</li>
 	<li>
@@ -932,106 +896,67 @@ clef du Protagonist : (6.4, 1.6)
         	<li>(input-box: bind $poid_synapse_Neud1C1_Neud1C2, "==X==", 1, $poid_synapse_Neud1C1_Neud1C2)</li>
 			<li>(input-box: bind $poid_synapse_Neud1C1_Neud2C2, "==X==", 1, $poid_synapse_Neud1C1_Neud2C2)</li>
         	<li>(input-box: bind $poid_synapse_Neud2C1_Neud1C2, "==X==", 1, $poid_synapse_Neud2C1_Neud1C2)</li>
-			<li>(input-box: bind $poid_synapse_Neud2C1_Neud2C2, "==X==", 1,$poid_synapse_Neud2C1_Neud2C2)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C1_Neud2C2, "==X==", 1, $poid_synapse_Neud2C1_Neud2C2)</li>
 		</ul>
 	</li>
 	<li>
     	<ul>
-        	<li>$Neud1C2</li>
-			<li>$Neud2C2</li>
+        	<li><span class="node-value">$Neud1C2</span></li>
+			<li><span class="node-value">$Neud2C2</span></li>
 		</ul>
 	</li>
 	<li>
     	<ul>
         	<li>(input-box: bind $poid_synapse_Neud1C2_Neud1C3, "==X==", 1, $poid_synapse_Neud1C2_Neud1C3)</li>
-			<li>(input-box: bind $poid_synapse_Neud2C2_Neud1C3, "==X==", 1,$poid_synapse_Neud2C2_Neud1C3)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C2_Neud1C3, "==X==", 1, $poid_synapse_Neud2C2_Neud1C3)</li>
 		</ul>
 	</li>
 	<li>
     	<ul>
-        	<li>$Neud1C3</li>
+        	<li><span class="node-value">$Neud1C3</span></li>
 		</ul>
 	</li>
 </ol>
 
 <p>
-
-
-
-(link-repeat: "AI k")[
-
-(set: $Neud1C1 to $Neud1C1_ia)
-(set: $Neud2C1 to $Neud2C1_ia)
-
-(go-to: "concrete example")
+(link-repeat: "AI k")[  
+	(set: $Neud1C1 to $Neud1C1_ia)  
+	(set: $Neud2C1 to $Neud2C1_ia)  
+	(go-to: "concrete example")
 ]
 
-(link-repeat: "pour le protagoniste")[
-
-(set: $Neud1C1 to $Neud1C1_Pr)
-(set: $Neud2C1 to $Neud2C1_Pr)
-
-(go-to: "concrete example")
+(link-repeat: "pour le protagoniste")[  
+	(set: $Neud1C1 to $Neud1C1_Pr)  
+	(set: $Neud2C1 to $Neud2C1_Pr)  
+	(go-to: "concrete example")
 ]
 
-(link-repeat: "up date")[
-
-(set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
-				+ (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
-
-(set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
-				+ (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
-
-
-(set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
-				+ (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
-
-(go-to: "concrete example")
+(link-repeat: "up date")[  
+	(set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)  
+	(set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)  
+	(set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)  
+	(go-to: "concrete example")
 ]
 
-(link-repeat: "try it out the")[
+(link-repeat: "try it out the")[  
+	/* IA */  
+	(set: $Neud1C1 to $Neud1C1_ia)  
+	(set: $Neud2C1 to $Neud2C1_ia)  
+	(set: $Neud1C2 to (round: ((num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1), 0.01))  
+	(set: $Neud2C2 to (round: ((num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1), 0.01))  
+	(set: $Neud1C3 to (round: ((num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2), 0.01))  
+	(set: $Neud1C3_ia to (round: $Neud1C3, 0.01))  
 
-    (set: $Neud1C1 to $Neud1C1_ia)
-    (set: $Neud2C1 to $Neud2C1_ia)
+	(set: $Neud1C1 to $Neud1C1_Pr)  
+	(set: $Neud2C1 to $Neud2C1_Pr)  
+	(set: $Neud1C2 to (round: ((num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1), 0.01))  
+	(set: $Neud2C2 to (round: ((num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1), 0.01))  
+	(set: $Neud1C3 to (round: ((num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2), 0.01))  
+	(set: $Neud1C3_Pr to (round: $Neud1C3, 0.01))  
 
-
-    (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
-
-    (set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
-
-
-    (set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
-                    + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
-
-
-    (set: $Neud1C3_ia to $Neud1C3)
-
-
-
-    (set: $Neud1C1 to $Neud1C1_Pr)
-    (set: $Neud2C1 to $Neud2C1_Pr)
-
-
-<<<<<<< HEAD
-    (set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)
-
-    (set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1
-                    + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)
-
-
-    (set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2
-                    + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)
-
-
-    (set: $Neud1C3_Pr to $Neud1C3)
-
-
-    (if: ($Neud1C3_Pr > 1 and $Neud1C3_ia < 1))[
-	(go-to: "acesse granted")
-    ]
+	(if: ($Neud1C3_Pr > 1 and $Neud1C3_ia < 1))[  
+		(go-to: "acesse granted")  
+	]
 ]
 </p>
 
@@ -1077,15 +1002,17 @@ clef du Protagonist : (6.4, 1.6)
 
 
 :: logique 1 {"position":"550,125","size":"100,100"}
+>>>>>>> code_aymane
 (if:$nom_joueur is "")[(set: $nom_joueur to "jarvis")]
 
 (go-to: "Beginning 2")
 
 
-:: rummage throw the archives {"position":"1075,750","size":"100,100"}
+<<<<<<< HEAD
+:: net {"position":"1400,225","size":"100,100"}
+
 =======
-:: rummage throw the archives {"position":"1025,725","size":"100,100"}
->>>>>>> mini_jeux_archives_lylian
+:: rummage throw the archives {"position":"1075,750","size":"100,100"}
 <p>You find out that the now rogue $nam_ai, is based on a neural network architecture.</p>
 
 <p>It is composed of numerical inputs node.</p>
@@ -1096,6 +1023,7 @@ clef du Protagonist : (6.4, 1.6)
 
 
 <p>You figured that a [[concrete example set up]] will be mandatory to understand.</p>
+>>>>>>> code_aymane
 
 
 :: StoryStylesheet [stylesheet]
@@ -1257,7 +1185,6 @@ tw-story[data-bg="yes"]::before {
   font-size: 34px;          
 }
 
-<<<<<<< HEAD
 .barreinput input[type="text"] {
   background-color : #00bfff;
   color : black;
@@ -1307,19 +1234,26 @@ article{
   top:300px;
 }
 
+<<<<<<< HEAD
+span{
+  display:flex;
+  gap:20px;
+}
+
+=======
 .barreinput input[type="text"] {
   position: relative;
   width: 60%;
   padding: 12px 20px;
   font-family: 'Orbitron', sans-serif;
   font-size: 18px;
-  color: #00bfff; /* texte bleu principal */
+  color: #00bfff; 
   background: rgba(0, 0, 0, 0.85);
-  border: 2px solid #00bfff; /* harmonisation */
+  border: 2px solid #00bfff; 
   border-radius: 8px;
   outline: none;
-  text-shadow: 0 0 8px #00bfff, 0 0 12px #00bfff; /* texte glow */
-  box-shadow: 0 0 10px #00bfff, inset 0 0 15px #002244; /* halo interne */
+  text-shadow: 0 0 8px #00bfff, 0 0 12px #00bfff; 
+  box-shadow: 0 0 10px #00bfff, inset 0 0 15px #002244; 
   transition: all 0.3s ease-in-out;
   animation: glowPulse 2.5s infinite ease-in-out;
 }
@@ -1350,7 +1284,7 @@ article{
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(0, 187, 255, 0.2), /* harmonisation bleu principal */
+    rgba(0, 187, 255, 0.2), 
     transparent
   );
   animation: scan 3s infinite linear;
@@ -1408,6 +1342,7 @@ article{
 body.shake-soft {
   animation: shake-soft 0.5s ease-in-out;
 }
+>>>>>>> code_aymane
 span tw-hook tw-link {
   display:block;
   padding:0px;
@@ -1423,6 +1358,8 @@ span tw-hook tw-link {
   transition: all 0.3s ease;
   box-shadow: 0 0 10px #00bfff;
 }
+<<<<<<< HEAD
+=======
 article section {
   display:flex;
   align-items:center;
@@ -1464,11 +1401,15 @@ span{
   display:flex;
   gap:20px;
 }
+>>>>>>> code_aymane
 
 span tw-hook tw-link:hover {
   background: #00bfff;
   color: #000;
   text-shadow: none;
+<<<<<<< HEAD
+  box-shadow: 0 0 30px #00bfff, 0 0 60px #00bfff;
+=======
   box-shadow: 0 0 30px #00bfff, 0 0 60px #00bfff;
 }
 #transition-overlay{
@@ -1625,7 +1566,7 @@ span tw-hook tw-link:hover {
   50% { opacity: 0.7; }
 }
 
-/* Titre */
+
 .intro-title {
   font-family: 'Orbitron', sans-serif;
   font-size: 60px;
@@ -1725,7 +1666,6 @@ span tw-hook tw-link:hover {
 }
 
 .holo-panel { z-index: 2; }
-/* === Styles spécifiques à la scène "server-dialogue-scene" === */
 .server-dialogue-scene .dialogue-interface {
   position: relative;
   width: 90%;
@@ -1817,10 +1757,11 @@ span tw-hook tw-link:hover {
 .server-dialogue-scene .dialogue-container .typewriter:first-of-type {
   margin-top: -120px;
 }
-=======
-
-
->>>>>>> mini_jeux_archives_lylian
+ol, ul {
+  list-style: none; 
+  padding-left: 0;  
+  margin: 0;       
+}
 ol {
   display: flex;
   gap: 10px;
@@ -1835,3 +1776,25 @@ ul {
   gap: 10px;
   
 }
+.node-value {
+  display: inline-block;
+  padding: 12px 18px;
+  min-width: 50px;
+  text-align: center;
+  border-radius: 50%; 
+  border: 2px solid #00bfff; 
+  background: rgba(0, 187, 255, 0.1); 
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  text-shadow: 0 0 5px #00bfff, 0 0 15px #00bfff;
+  box-shadow: 0 0 10px #00bfff, 0 0 25px #00ffff inset; 
+  transition: all 0.3s ease-in-out;
+}
+
+.node-value:hover {
+  box-shadow: 0 0 20px #00bfff, 0 0 50px #00ffff inset;
+  transform: scale(1.1);
+}
+
+>>>>>>> code_aymane
