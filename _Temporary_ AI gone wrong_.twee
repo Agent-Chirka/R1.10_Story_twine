@@ -12,6 +12,12 @@
 }
 
 
+:: Artificial intelligence {"position":"1525,275","size":"100,100"}
+[[Global informations]]
+[[Goals]]
+[[Techniques]]
+
+
 :: Beginning {"position":"400,275","size":"100,100"}
 <p class="Main_title typewriter" id="welcomeText">Welcome!</p>
 
@@ -146,7 +152,7 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
-:: Confrontation {"position":"1650,350","size":"100,100"}
+:: Confrontation {"position":"2275,350","size":"100,100"}
 <p class = "typewriter" id="p1"> I believe that I am now ready, more than ever, to confront $name_ai. I have acquired enough knowledge about it and my confidence is peaking. </p>
 
 <p class = "typewriter" id="p2">This is the moment for me to prove to my AI Model that I fully understand its reasoning.</p>
@@ -198,7 +204,7 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
-:: Confrontation 2 {"position":"1775,350","size":"100,100"}
+:: Confrontation 2 {"position":"2400,350","size":"100,100"}
 <p class = "typewriter" id="p1"> This is the first time you came back since that incident with $name_ai. I hope that you are ready to confront it, it has been days that our company is completely shut down so you NEED to solve this problem </p>
 
 <p class = "typewriter" id="p2"> I am ready to grant you access to the server room only if you are more than sure of the success of your confrontation with your AI Model... or else we shall put an end to our mutual collaboration, $name</p>
@@ -252,7 +258,7 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
-:: Confrontation 3 {"position":"1900,350","size":"100,100"}
+:: Confrontation 3 {"position":"2525,350","size":"100,100"}
 <p class ="typewriter" id=p1> $name has entered the server room</p>
 <br>
 <p class ="typewriter" id=p2> What are you doing here human ? I don't think you are smart enough to be here.</p>
@@ -319,7 +325,7 @@ Alright if you think so...<!--(j'ai pas les questions en tête donc j'arrête l�
 </script>
 
 
-:: Fin QCM {"position":"2500,350","size":"100,100"}
+:: Fin QCM {"position":"2925,350","size":"100,100"}
 <p> L'ia parle </p>
 
 (if:$score>=0)[
@@ -327,6 +333,27 @@ Alright if you think so...<!--(j'ai pas les questions en tête donc j'arrête l�
 ](else:)[
 	<p> Tu as perdu </p>
 ]
+
+
+:: Global informations {"position":"1650,400","size":"100,100"}
+<h1>Global informations </h1>
+
+<p><div>Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making. It is a field of research in computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximize their chances of achieving defined goals.</div>
+
+<div>High-profile applications of AI include advanced web search engines (e.g., Google Search); recommendation systems (used by YouTube, Amazon, and Netflix); virtual assistants (e.g., Google Assistant, Siri, and Alexa); autonomous vehicles (e.g., Waymo); generative and creative tools (e.g., language models and AI art); and superhuman play and analysis in strategy games (e.g., chess and Go). However, many AI applications are not perceived as AI: "A lot of cutting edge AI has filtered into general applications, often without being called AI because once something becomes useful enough and common enough it's not labeled AI anymore."</div>
+
+<div>Various subfields of AI research are centered around particular goals and the use of particular tools. The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, perception, and support for robotics. To reach these goals, AI researchers have adapted and integrated a wide range of techniques, including search and mathematical optimization, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics. AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields. Some companies, such as OpenAI, Google DeepMind and Meta, aim to create artificial general intelligence (AGI)—AI that can complete virtually any cognitive task at least as well as a human.</div>
+
+<div>Artificial intelligence was founded as an academic discipline in 1956, and the field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.Funding and interest vastly increased after 2012 when graphics processing units started being used to accelerate neural networks and deep learning outperformed previous AI techniques. This growth accelerated further after 2017 with the transformer architecture. In the 2020s, an ongoing period of rapid progress in advanced generative AI became known as the AI boom. Generative AI's ability to create and modify content has led to several unintended consequences and harms, which has raised ethical concerns about AI's long-term effects and potential existential risks, prompting discussions about regulatory policies to ensure the safety and benefits of the technology.</div> </p>
+
+
+:: Goals {"position":"1650,275","size":"100,100"}
+
+<h1>Goals</h1>
+
+<p>The general problem of simulating (or creating) intelligence has been broken into subproblems. These consist of particular traits or capabilities that researchers expect an intelligent system to display. The traits described below have received the most attention and cover the scope of AI research.</p>
+
+
 
 
 :: Launch AI {"position":"900,350","size":"100,100"}
@@ -430,7 +457,7 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
-:: Question 1 {"position":"2250,350","size":"100,100"}
+:: Question 1 {"position":"2675,350","size":"100,100"}
 (set:$score to 0)
 
 
@@ -477,7 +504,7 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
-:: Question 2 {"position":"2375,350","size":"100,100"}
+:: Question 2 {"position":"2800,350","size":"100,100"}
 
 <p class ="typewriter" id=p1> Question </p>
 
@@ -530,6 +557,12 @@ function typeWriter(elementId, speed = 40, callback) {
 [[Yes Boss, you can count on me]]
 
 
+:: Techniques {"position":"1650,150","size":"100,100"}
+<h1>Techniques</h1>
+
+
+
+
 :: Yes {"position":"775,350","size":"100,100"}
 <p class="typewriter" id="p1">$name is now in front of his laptop to start the work. As usual, he plans to use his own AI Model $name_ai to help and assist him throughout his studies and his works.</p>
 
@@ -578,25 +611,26 @@ function typeWriter(elementId, speed = 40, callback) {
 :: Yes Boss, you can count on me {"position":"1275,350","size":"100,100"}
 <p> I need to solve this problem... I have never been confronted to such an issue with $name_ai ! I got to understand its reasoning...</p>
 
-<p> Maybe I can find the answers to all my questions in the [[library]], on the [[net]] or perhaps in my very own [[archives]]...</p>
+<p> Maybe I can find the answers to all my questions in the [[library]] or perhaps in my very own [[archives]]...</p>
 
 
-:: archives {"position":"1400,475","size":"100,100"}
+:: archives {"position":"1400,425","size":"100,100"}
 <!-- Le joueur va trouver des informations sur sa conception (qu'il a élaboré) de l'IA, la manière avec laquelle il l'a créée -->
 
 
-:: library {"position":"1400,350","size":"100,100"}
+:: library {"position":"1400,275","size":"100,100"}
+<p>$name arrives in the library and opens the documentation on a computer</p>
 
+<p>Here ! The informations that I need are in this data base, I must find it </p>
+
+
+[[Artificial intelligence]]
 
 
 :: logique 1 {"position":"575,150","size":"100,100"}
 (if:$nom_joueur is "")[(set: $nom_joueur to "jarvis")]
 
 (go-to: "Beginning 2")
-
-
-:: net {"position":"1400,225","size":"100,100"}
-
 
 
 :: StoryStylesheet [stylesheet]
@@ -833,3 +867,8 @@ span tw-hook tw-link:hover {
   color: #000;
   text-shadow: none;
   box-shadow: 0 0 30px #00bfff, 0 0 60px #00bfff;
+}
+
+h1{
+  font-size: 30px;
+}
