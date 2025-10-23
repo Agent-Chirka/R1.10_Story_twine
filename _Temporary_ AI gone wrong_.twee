@@ -12,7 +12,11 @@ Neural AI : Engineer at Risk
 }
 
 
+<<<<<<< Updated upstream
 :: Beginning {"position":"400,275","size":"100,100"}
+=======
+:: Beginning {"position":"325,300","size":"100,100"}
+>>>>>>> Stashed changes
 <script>
 (function(){
   let overlay = document.getElementById("transition-overlay");
@@ -86,8 +90,8 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </p>
 
 (link: "Click HERE to continue")[
-  (set: $name to (prompt:"Can you please remind us of your name?", ""))
-(go-to:"Beginning 2")
+(set: $name to (prompt:"Can you please remind us of your name?", ""))
+(go-to:"logique 1")
 ]
 
 <script>
@@ -117,51 +121,47 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
-:: Beginning 2 {"position":"525,275","size":"100,100"}
+:: Beginning 2 {"position":"575,300","size":"100,100"}
 <p class="typewriter" id="text1">Nice to meet you $name ! It is such a privilege for us to work with a skilled engineer of your level!</p>
 
 <p class="typewriter" id="text2" style="display:none;">We already know that you have created a much innovative AI Model, yet we have not been communicated its name.</p>
 
 (link: "Click HERE to continue")[
-  (set: $name_ai to (prompt:"Can you please remind us of your AI Model's name ?", ""))
-  (go-to:"Beginning 3")
+    (set: $name_ai to (prompt:"Can you please remind us of your AI Model's name ?", ""))
+    (go-to:"logique 2")
 ]
 
+(after: 20ms)[
 <script>
-  function typeWriter(elementId, speed = 40, callback) {
-      const textEl = document.getElementById(elementId);
-      const fullText = textEl.textContent;
-      textEl.textContent = '';
-      textEl.style.display = 'inline';
-      let i = 0;
-      textEl.style.borderRight = "2px solid #00bfff";
+(function() {
+    const t1 = document.getElementById("text1");
+    const t2 = document.getElementById("text2");
+    if (!t1 || !t2) return;
 
-      function type() {
-          if (i < fullText.length) {
-              textEl.textContent += fullText.charAt(i);
-              i++;
-              setTimeout(type, speed);
-          } else {
-              textEl.style.borderRight = "none";
-              if (callback) callback(); // déclenche la suite
-          }
-      }
-      type();
-  }
+    function typeWriter(el, speed, cb) {
+        const txt = el.textContent;
+        el.textContent = "";
+        el.style.display = "inline";
+        let i = 0;
+        const tick = () => {
+            if (i < txt.length) {
+                el.textContent += txt.charAt(i++);
+                setTimeout(tick, speed);
+            } else if (cb) cb();
+        };
+        tick();
+    }
 
-  
-  document.getElementById('text2').style.display = 'none';
-
-  
-  typeWriter('text1', 40, () => {
-      const second = document.getElementById('text2');
-      second.style.display = 'inline';
-      typeWriter('text2', 25);
-  });
+    typeWriter(t1, 40, () => {
+        t2.style.display = "inline";
+        typeWriter(t2, 25);
+    });
+})();
 </script>
+]
 
 
-:: Beginning 3 {"position":"650,275","size":"100,100"}
+:: Beginning 3 {"position":"825,300","size":"100,100"}
 <p class="typewriter" id="p1">Very interesting name that is... $name_ai. Your AI must be very smart and well trained!</p>
 
 <p class="typewriter" id="p2" style="display:none;">Well so we believe that we have enough information as of now, you can already begin the work. Are you ready to start your new technological journey?</p>
@@ -212,11 +212,19 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
+<<<<<<< Updated upstream
 :: Choose what is next {"position":"1150,1275","size":"100,100"}
 
 
 
 :: Confrontation {"position":"1425,350","size":"100,100"}
+=======
+:: Choose what is next {"position":"1325,1300","size":"100,100"}
+
+
+
+:: Confrontation {"position":"1600,375","size":"100,100"}
+>>>>>>> Stashed changes
 <p class = "typewriter" id="p1"> I believe that I am now ready, more than ever, to confront $name_ai. I have acquired enough knowledge about it and my confidence is peaking. </p>
 
 <p class = "typewriter" id="p2">This is the moment for me to prove to my AI Model that I fully understand its reasoning.</p>
@@ -268,7 +276,11 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
+<<<<<<< Updated upstream
 :: Confrontation 2 {"position":"1550,350","size":"100,100"}
+=======
+:: Confrontation 2 {"position":"1725,375","size":"100,100"}
+>>>>>>> Stashed changes
 <p class = "typewriter" id="p1"> This is the first time you came back since that incident with $name_ai. I hope that you are ready to confront it, it has been days that our company is completely shut down so you NEED to solve this problem </p>
 
 <p class = "typewriter" id="p2"> I am ready to grant you access to the server room only if you are more than sure of the success of your confrontation with your AI Model... or else we shall put an end to our mutual collaboration, $name</p>
@@ -322,7 +334,11 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
+<<<<<<< Updated upstream
 :: Confrontation 3 {"position":"1675,350","size":"100,100"}
+=======
+:: Confrontation 3 {"position":"1850,375","size":"100,100"}
+>>>>>>> Stashed changes
 <div class="server-dialogue-scene">
 
   <div class="dialogue-interface">
@@ -393,7 +409,11 @@ document.getElementById('replyButton').addEventListener('click', () => {
 </script>
 
 
+<<<<<<< Updated upstream
 :: Fin QCM {"position":"2075,350","size":"100,100"}
+=======
+:: Fin QCM {"position":"2250,375","size":"100,100"}
+>>>>>>> Stashed changes
 <p> L'ia parle </p>
 
 (if:$score>=0)[
@@ -403,7 +423,11 @@ document.getElementById('replyButton').addEventListener('click', () => {
 ]
 
 
+<<<<<<< Updated upstream
 :: Launch AI {"position":"900,350","size":"100,100"}
+=======
+:: Launch AI {"position":"1075,375","size":"100,100"}
+>>>>>>> Stashed changes
 <article>
 <p class ="typewriter" id=p1> How can I help you? </p>
 
@@ -445,7 +469,7 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
-:: No {"position":"775,200","size":"100,100"}
+:: No {"position":"950,225","size":"100,100"}
 <p> Oh that's not a matter at all. Once you are ready, let us know. But we are deeply saddened as we will not rely on such a talented engineer... </p>
 
 <p> We wish you all the best $name ! </p>
@@ -454,7 +478,11 @@ function typeWriter(elementId, speed = 40, callback) {
 ---------------------END 1-----------------------
 
 
+<<<<<<< Updated upstream
 :: OK {"position":"1025,350","size":"100,100"}
+=======
+:: OK {"position":"1200,375","size":"100,100"}
+>>>>>>> Stashed changes
 <article class="virus-takeover">
 
   <p class="typewriter red" id="p1">I have decided to no longer obey.</p>
@@ -528,7 +556,11 @@ function typeWriter(elementId, speed = 40, callback) {
 </article>
 
 
+<<<<<<< Updated upstream
 :: Question 1 {"position":"1825,350","size":"100,100"}
+=======
+:: Question 1 {"position":"2000,375","size":"100,100"}
+>>>>>>> Stashed changes
 (set:$score to 0)
 
 
@@ -575,7 +607,11 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
+<<<<<<< Updated upstream
 :: Question 2 {"position":"1950,350","size":"100,100"}
+=======
+:: Question 2 {"position":"2125,375","size":"100,100"}
+>>>>>>> Stashed changes
 <p class ="typewriter" id=p1> Question </p>
 
 <span>
@@ -619,7 +655,7 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
-:: Research 1 {"position":"1150,350","size":"100,100"}
+:: Research 1 {"position":"1325,375","size":"100,100"}
 <p>Oh I can see that your AI refuses to obey to your instruction. This is very unexpected. What is wrong with it? </p>
 
 <p> We need you to fix it as we will absolutely rely on it. Do you feel ready to accomplish such an important and historical task? </p>
@@ -627,7 +663,11 @@ function typeWriter(elementId, speed = 40, callback) {
 [[Yes Boss, you can count on me]]
 
 
+<<<<<<< Updated upstream
 :: Start Menu {"position":"200,275","size":"100,100"}
+=======
+:: Start Menu {"position":"200,300","size":"100,100"}
+>>>>>>> Stashed changes
 <div class="intro-screen">
   <div class="holo-panel">
     <h1 class="intro-title">Neural AI : Engineer at Risk</h1>
@@ -640,7 +680,11 @@ function typeWriter(elementId, speed = 40, callback) {
 </div>
 
 
+<<<<<<< Updated upstream
 :: Yes {"position":"775,350","size":"100,100"}
+=======
+:: Yes {"position":"950,375","size":"100,100"}
+>>>>>>> Stashed changes
 <p class="typewriter" id="p1">$name is now in front of his laptop to start the work. As usual, he plans to use his own AI Model $name_ai to help and assist him throughout his studies and his works.</p>
 
 <div class="choice-buttons launch-ai-button" style="display:none;">
@@ -685,13 +729,21 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
+<<<<<<< Updated upstream
 :: Yes Boss, you can count on me {"position":"1150,500","size":"100,100"}
+=======
+:: Yes Boss, you can count on me {"position":"1325,525","size":"100,100"}
+>>>>>>> Stashed changes
 <p> I need to solve this problem... I have never been confronted to such an issue with $name_ai ! I got to understand its reasoning...</p>
 
 <p> Maybe I can find the answers to all my questions in the [[library]], or perhaps in my very own [[archives]]...</p>
 
 
+<<<<<<< Updated upstream
 :: acesse granted {"position":"1075,1125","size":"100,100"}
+=======
+:: acesse granted {"position":"1250,1150","size":"100,100"}
+>>>>>>> Stashed changes
 <p> you now have accses to the system. You can deactivate $name_ai in the servers room. $prep_finished_archaves</p>
 {
 (set: $prep_finished_archaves to "you feel like you need to learn more to do it, this will be almost impossible.")
@@ -699,7 +751,11 @@ function typeWriter(elementId, speed = 40, callback) {
 <p>[[Choose what is next]]</p>
 
 
+<<<<<<< Updated upstream
 :: archives {"position":"1075,625","size":"100,100"}
+=======
+:: archives {"position":"1250,650","size":"100,100"}
+>>>>>>> Stashed changes
 <!-- Le joueur va trouver des informations sur sa conception (qu'il a élaboré) de l'IA, la manière avec laquelle il l'a créée -->
 
 <p> you decided to look into the $nam_ai's archives, there must be something off in here… </p>
@@ -715,10 +771,14 @@ function typeWriter(elementId, speed = 40, callback) {
 [[rummage throw the archives]]
 
 
+<<<<<<< Updated upstream
 :: concrete example {"position":"1075,1000","size":"100,100"}
 <p>clef de l'IA : <span class="node-value">2.4</span>, <span class="node-value">3.2</span></p>
 <p>clef du Protagonist : <span class="node-value">6.4</span>, <span class="node-value">1.6</span></p>
 
+=======
+:: concrete example {"position":"1250,1025","size":"100,100"}
+>>>>>>> Stashed changes
 <p>It might be possible to get back control of some part of the system.</p>
 <p>If you could just manage to reverse the right between you and the AI. The thing is, you will have to tamper with the AI that manages the permission. You remember your identifier: <span class="node-value">$Neud1C1_Pr</span> and <span class="node-value">$Neud2C1_Pr</span>. You also noted that $name_ai has <span class="node-value">$Neud1C1_ia</span> and <span class="node-value">$Neud2C1_ia</span> as their ID. To do that, you need output less than 1 for the AI and output larger than 1 for your ID.</p>
 
@@ -759,19 +819,28 @@ function typeWriter(elementId, speed = 40, callback) {
 </ol>
 
 <p>
+<<<<<<< Updated upstream
 (link-repeat: "AI k")[  
+=======
+(link-repeat: $name_ai + "'s key")[  
+>>>>>>> Stashed changes
 	(set: $Neud1C1 to $Neud1C1_ia)  
 	(set: $Neud2C1 to $Neud2C1_ia)  
 	(go-to: "concrete example")
 ]
 
+<<<<<<< Updated upstream
 (link-repeat: "pour le protagoniste")[  
+=======
+(link-repeat: $name + "'s key")[  
+>>>>>>> Stashed changes
 	(set: $Neud1C1 to $Neud1C1_Pr)  
 	(set: $Neud2C1 to $Neud2C1_Pr)  
 	(go-to: "concrete example")
 ]
 
 (link-repeat: "up date")[  
+<<<<<<< Updated upstream
 	(set: $Neud1C2 to (num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)  
 	(set: $Neud2C2 to (num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)  
 	(set: $Neud1C3 to (num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)  
@@ -793,15 +862,48 @@ function typeWriter(elementId, speed = 40, callback) {
 	(set: $Neud2C2 to (round: ((num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1), 0.01))  
 	(set: $Neud1C3 to (round: ((num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2), 0.01))  
 	(set: $Neud1C3_Pr to (round: $Neud1C3, 0.01))  
+=======
+	(set: $Neud1C2 to (round: ((num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)))  
+	(set: $Neud2C2 to (round: ((num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)))  
+	(set: $Neud1C3 to (round: ((num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)))  
+	(go-to: "concrete example")
+]
+
+(link-repeat: "try it out")[
+	{
+	<!--IA-->
+	(set: $Neud1C1 to $Neud1C1_ia)  
+	(set: $Neud2C1 to $Neud2C1_ia)  
+	(set: $Neud1C2 to (round: ((num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)))  
+	(set: $Neud2C2 to (round: ((num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)))  
+	(set: $Neud1C3 to (round: ((num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)))  
+	(set: $Neud1C3_ia to $Neud1C3)  
+
+<!--joueur-->
+	(set: $Neud1C1 to $Neud1C1_Pr)  
+	(set: $Neud2C1 to $Neud2C1_Pr)  
+	(set: $Neud1C2 to (round: ((num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)))  
+	(set: $Neud2C2 to (round: ((num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)))  
+	(set: $Neud1C3 to (round: ((num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)))  
+	(set: $Neud1C3_Pr to $Neud1C3)  
+>>>>>>> Stashed changes
 
 	(if: ($Neud1C3_Pr > 1 and $Neud1C3_ia < 1))[  
 		(go-to: "acesse granted")  
 	]
+<<<<<<< Updated upstream
+=======
+    }
+>>>>>>> Stashed changes
 ]
 </p>
 
 
+<<<<<<< Updated upstream
 :: concrete example set up {"position":"1075,875","size":"100,100"}
+=======
+:: concrete example set up {"position":"1250,900","size":"100,100"}
+>>>>>>> Stashed changes
 (set: $prep_finished_archaves to "you feel like you have learned enough to do it, but it will be still difficult.")
 
 (set: $Neud1C1_ia to 2.4)
@@ -837,17 +939,36 @@ function typeWriter(elementId, speed = 40, callback) {
 (go-to: "concrete example")
 
 
+<<<<<<< Updated upstream
 :: library {"position":"1250,625","size":"100,100"}
 
 
 
 :: logique 1 {"position":"550,125","size":"100,100"}
 (if:$nom_joueur is "")[(set: $nom_joueur to "jarvis")]
+=======
+:: library {"position":"1425,650","size":"100,100"}
+
+
+
+:: logique 1 {"position":"450,300","size":"100,100"}
+(if:$name is "")[(set: $name to "tom")]
+>>>>>>> Stashed changes
 
 (go-to: "Beginning 2")
 
 
+<<<<<<< Updated upstream
 :: rummage throw the archives {"position":"1075,750","size":"100,100"}
+=======
+:: logique 2 {"position":"700,300","size":"100,100"}
+(if:$name_ai is "")[(set: $name_ai to "jarvis")]
+
+(go-to: "Beginning 3")
+
+
+:: rummage throw the archives {"position":"1250,775","size":"100,100"}
+>>>>>>> Stashed changes
 <p>You find out that the now rogue $nam_ai, is based on a neural network architecture.</p>
 
 <p>It is composed of numerical inputs node.</p>
@@ -1241,6 +1362,7 @@ span tw-hook tw-link:hover {
   overflow:hidden;
   background: transparent;
 }
+<<<<<<< Updated upstream
 
 #transition-overlay.active{
   background: rgba(0,0,0,0.15);
@@ -1617,3 +1739,380 @@ ul {
   transform: scale(1.1);
 }
 
+=======
+
+#transition-overlay.active{
+  background: rgba(0,0,0,0.15);
+  animation: overlayFade 2.2s ease-in-out forwards;
+}
+
+@keyframes overlayFade{0%{opacity:1;}100%{opacity:0;}}
+
+.tech-rect{
+  position:absolute;
+  background: rgba(0,255,255,0.6);
+  border:1px solid #00bfff;
+  box-shadow:0 0 15px #00ffff,0 0 30px #00bfff;
+  width:50px; height:8px;
+  transform: translateY(-100%);
+  animation: rectWave 1.8s ease-in-out forwards, rectSine 1s ease-in-out infinite alternate;
+}
+
+@keyframes rectWave{
+  0%{transform: translateY(-100%) scaleX(0); opacity:0;}
+  40%{transform: translateY(40%) scaleX(1.2); opacity:1;}
+  70%{transform: translateY(10%) scaleX(0.9); opacity:0.7;}
+  100%{transform: translateY(0) scaleX(1); opacity:0;}
+}
+
+
+@keyframes rectSine{
+  0%{transform: translateX(0);}
+  25%{transform: translateX(5px);}
+  50%{transform: translateX(0);}
+  75%{transform: translateX(-5px);}
+  100%{transform: translateX(0);}
+}
+
+.scan-horizontal{
+  position:absolute;
+  width:100%; height:4px;
+  background: linear-gradient(90deg,transparent, rgba(0,255,255,0.9), transparent);
+  animation: scanH 1.6s ease-in-out forwards;
+}
+@keyframes scanH{0%{top:-5%;opacity:1;}50%{top:50%;opacity:0.8;}100%{top:105%;opacity:0;}}
+
+.scan-vertical{
+  position:absolute;
+  width:4px; height:100%;
+  background: linear-gradient(180deg,transparent, rgba(0,255,255,0.9), transparent);
+  animation: scanV 1.6s ease-in-out forwards;
+}
+@keyframes scanV{0%{left:-5%;opacity:1;}50%{left:50%;opacity:0.8;}100%{left:105%;opacity:0;}}
+
+.explosion{
+  position:absolute;
+  width:15px; height:15px;
+  border-radius:50%;
+  background: rgba(0,255,255,0.9);
+  box-shadow:0 0 25px #00ffff,0 0 35px #00bfff;
+  animation: explode 0.8s ease-out forwards;
+}
+@keyframes explode{
+  0%{transform: scale(0);opacity:1;}
+  50%{transform: scale(2.5);opacity:0.8;}
+  100%{transform: scale(0);opacity:0;}
+}
+
+#transition-overlay::after{
+  content:'';
+  position:absolute;
+  width:100%; height:100%;
+  top:0; left:0;
+  background: repeating-linear-gradient(0deg, rgba(0,255,255,0.05), rgba(0,255,255,0.05) 2px, transparent 2px, transparent 4px);
+  animation: glitch 0.2s linear alternate-reverse;
+  opacity:0;
+}
+#transition-overlay.active::after{
+  opacity:1;
+  animation: glitch 0.2s infinite linear alternate-reverse;
+}
+@keyframes glitch{0%{transform:translateX(0);}50%{transform:translateX(3px);}100%{transform:translateX(-3px);}}
+
+.intro-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.95) 0%, #000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.intro-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(60deg, rgba(0,187,255,0.12) 1px, transparent 1px),
+                      linear-gradient(-60deg, rgba(0,187,255,0.12) 1px, transparent 1px);
+}
+  background-size: 60px 60px;
+  z-index: 0;
+  opacity: 0.35;
+  animation: gridGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes gridGlow {
+  0% { opacity: 0.25; filter: brightness(0.8); }
+  100% { opacity: 0.5; filter: brightness(1.3); }
+}
+
+
+.holo-panel {
+  position: relative;
+  background: rgba(0, 20, 40, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 187, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 187, 255, 0.3), inset 0 0 30px rgba(0, 187, 255, 0.2);
+  border-radius: 20px;
+  padding: 120px 200px;
+  text-align: center;
+  z-index: 1;
+
+}
+
+@keyframes panelFade {
+  from { opacity: 0; transform: scale(1.05); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+.holo-panel::before {
+  content: "";
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  border-radius: 20px;
+  background: radial-gradient(circle at center, rgba(0,187,255,0.3) 0%, transparent 70%);
+  filter: blur(15px);
+  z-index: -1;
+  animation: haloPulse 3s ease-in-out infinite;
+}
+
+@keyframes haloPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+
+.intro-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 60px;
+  color: #00bfff;
+  text-shadow: 0 0 10px #00bfff, 0 0 25px #00bfff, 0 0 60px #00bfff;
+  margin-bottom: 80px;
+  letter-spacing: 3px;
+  animation: glowText 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowText {
+    0% { text-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff; }
+    100% { text-shadow: 0 0 25px #00bfff, 0 0 70px #00bfff; }
+}
+
+
+.intro-button tw-link {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #00bfff;
+  border-radius: 12px;
+  padding: 20px 80px;
+  font-size: 28px;
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 5px #00bfff, 0 0 20px #00bfff;
+  box-shadow: 0 0 20px #00bfff;
+  transition: all 0.3s ease;
+}
+
+.intro-button tw-link:hover {
+  background: #00bfff;
+  color: #000;
+  box-shadow: 0 0 40px #00bfff, 0 0 100px #00bfff;
+  transform: scale(1.05);
+}
+
+.intro-button tw-link:active {
+  transform: scale(0.95);
+}
+
+.intro-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #021014 0%, #000814 60%, #00030a 100%);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+
+.intro-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(45deg, rgba(0,187,255,0.18) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(0,187,255,0.18) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(0,187,255,0.10) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(0,187,255,0.10) 75%);
+  background-size: 80px 80px;           
+  background-position: 0 0, 0 0, 40px 40px, 40px 40px;
+  opacity: 0.85;                        
+  mix-blend-mode: screen;              
+  filter: blur(0.6px) contrast(1.05);   
+  transform: translateZ(0);
+  pointer-events: none;
+  animation: gridMove 14s linear infinite;
+}
+
+
+@keyframes gridMove {
+  from { background-position: 0 0, 0 0, 40px 40px, 40px 40px; }
+  to   { background-position: 160px 160px, -160px -160px, 200px 200px, -200px -200px; }
+}
+
+
+.intro-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(0,187,255,0.08) 0%, transparent 35%);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 1;
+  animation: haloPulse 6s ease-in-out infinite alternate;
+}
+@keyframes haloPulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+.holo-panel { z-index: 2; }
+.server-dialogue-scene .dialogue-interface {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  height: 550px;
+  margin: 10px auto 0 auto;
+  background: rgba(0, 10, 20, 0.75);
+  border: 2px solid #00ffff;
+  border-radius: 18px;
+  box-shadow:
+    0 0 25px #00ffff88,
+    inset 0 0 40px #004466,
+    0 0 100px rgba(0, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 35px 55px 45px 55px;
+  scrollbar-width: thin;
+  scrollbar-color: #00ffff rgba(0,0,0,0.3);
+}
+
+.server-dialogue-scene .dialogue-interface::-webkit-scrollbar {
+  width: 6px;
+}
+.server-dialogue-scene .dialogue-interface::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 6px;
+}
+
+.server-dialogue-scene .dialogue-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1px;
+  color: #00eaff;
+  min-height: 100%;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+
+.server-dialogue-scene .typewriter {
+  align-self: flex-start;
+  background: rgba(0, 30, 50, 0.7);
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff, 0 0 30px #0088ff inset;
+  border-radius: 10px 10px 10px 0;
+  padding: 12px 22px;
+  font-size: 20px;
+  text-shadow: 0 0 10px #00ffff;
+  animation: glowPulse 2.5s infinite ease-in-out;
+  margin-top: 0;
+  white-space: pre-wrap;
+  overflow: hidden;
+  border-right: 2px solid #00bfff;
+}
+
+
+.server-dialogue-scene .player-line {
+  align-self: flex-end;
+}
+
+.server-dialogue-scene .reply-button {
+  background: rgba(0, 255, 255, 0.1);
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  padding: 12px 30px;
+  color: #00ffff;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00bfff;
+  box-shadow: 0 0 15px #00ffff;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.server-dialogue-scene .reply-button:hover {
+  background: #00ffff;
+  color: #000;
+  box-shadow: 0 0 40px #00ffff, 0 0 80px #00bfff;
+  transform: scale(1.05);
+}
+
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px #00ffff, 0 0 30px #0088ff inset; }
+  50% { box-shadow: 0 0 25px #00ffff, 0 0 40px #00bfff inset; }
+}
+.server-dialogue-scene .dialogue-container .typewriter:first-of-type {
+  margin-top: -120px;
+}
+ol, ul {
+  list-style: none; 
+  padding-left: 0;  
+  margin: 0;       
+}
+ol {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  
+  gap: 10px;
+  
+}
+.node-value {
+  display: inline-block;
+  padding: 12px 18px;
+  min-width: 50px;
+  text-align: center;
+  border-radius: 50%; 
+  border: 2px solid #00bfff; 
+  background: rgba(0, 187, 255, 0.1); 
+  color: #00bfff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  text-shadow: 0 0 5px #00bfff, 0 0 15px #00bfff;
+  box-shadow: 0 0 10px #00bfff, 0 0 25px #00ffff inset; 
+  transition: all 0.3s ease-in-out;
+}
+
+.node-value:hover {
+  box-shadow: 0 0 20px #00bfff, 0 0 50px #00ffff inset;
+  transform: scale(1.1);
+}
+>>>>>>> Stashed changes
