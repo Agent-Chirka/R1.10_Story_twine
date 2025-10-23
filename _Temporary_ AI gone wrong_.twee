@@ -13,9 +13,24 @@ Neural AI : Engineer at Risk
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: Beginning {"position":"400,275","size":"100,100"}
 =======
 :: Beginning {"position":"325,300","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: Artificial intelligence {"position":"1600,475","size":"100,100"}
+Artificial intelligence
+├─ [[Global informations]]
+├─ [[Techniques]]
+└─ [[Ethics]]
+
+(if: $info1 and $info2)[
+you got an [[idea]]!
+]
+
+
+:: Beginning {"position":"325,600","size":"100,100"}
 >>>>>>> Stashed changes
 <script>
 (function(){
@@ -121,7 +136,11 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 </script>
 
 
+<<<<<<< Updated upstream
 :: Beginning 2 {"position":"575,300","size":"100,100"}
+=======
+:: Beginning 2 {"position":"575,600","size":"100,100"}
+>>>>>>> Stashed changes
 <p class="typewriter" id="text1">Nice to meet you $name ! It is such a privilege for us to work with a skilled engineer of your level!</p>
 
 <p class="typewriter" id="text2" style="display:none;">We already know that you have created a much innovative AI Model, yet we have not been communicated its name.</p>
@@ -161,7 +180,11 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 ]
 
 
+<<<<<<< Updated upstream
 :: Beginning 3 {"position":"825,300","size":"100,100"}
+=======
+:: Beginning 3 {"position":"825,600","size":"100,100"}
+>>>>>>> Stashed changes
 <p class="typewriter" id="p1">Very interesting name that is... $name_ai. Your AI must be very smart and well trained!</p>
 
 <p class="typewriter" id="p2" style="display:none;">Well so we believe that we have enough information as of now, you can already begin the work. Are you ready to start your new technological journey?</p>
@@ -213,6 +236,7 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: Choose what is next {"position":"1150,1275","size":"100,100"}
 
 
@@ -224,6 +248,18 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 
 
 :: Confrontation {"position":"1600,375","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: Choose what is next {"position":"2325,675","size":"100,100"}
+go to the [[library]]
+go to the [[archives]]
+
+(if: $prep_finished_archaves and $prep_finished_archaves)[
+Now you can go to the [[Confrontation]].
+]
+
+
+:: Confrontation {"position":"2450,675","size":"100,100"}
 >>>>>>> Stashed changes
 <p class = "typewriter" id="p1"> I believe that I am now ready, more than ever, to confront $name_ai. I have acquired enough knowledge about it and my confidence is peaking. </p>
 
@@ -277,9 +313,13 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: Confrontation 2 {"position":"1550,350","size":"100,100"}
 =======
 :: Confrontation 2 {"position":"1725,375","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: Confrontation 2 {"position":"2575,675","size":"100,100"}
 >>>>>>> Stashed changes
 <p class = "typewriter" id="p1"> This is the first time you came back since that incident with $name_ai. I hope that you are ready to confront it, it has been days that our company is completely shut down so you NEED to solve this problem </p>
 
@@ -335,9 +375,13 @@ We have heard you are a talented engineer in Artificial Intelligence. So we want
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: Confrontation 3 {"position":"1675,350","size":"100,100"}
 =======
 :: Confrontation 3 {"position":"1850,375","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: Confrontation 3 {"position":"2700,675","size":"100,100"}
 >>>>>>> Stashed changes
 <div class="server-dialogue-scene">
 
@@ -410,9 +454,54 @@ document.getElementById('replyButton').addEventListener('click', () => {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: Fin QCM {"position":"2075,350","size":"100,100"}
 =======
 :: Fin QCM {"position":"2250,375","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: Ethics {"position":"1800,300","size":"100,100"}
+go back to [[Artificial intelligence]] 
+└─ Ethics
+
+
+<h1>Ethics</h1>
+<p>
+AI has potential benefits and potential risks. AI may be able to advance science and find solutions for serious problems: Demis Hassabis of DeepMind hopes to "solve intelligence, and then use that to solve everything else". However, as the use of AI has become widespread, several unintended consequences and risks have been identified. In-production systems can sometimes not factor ethics and bias into their AI training processes, especially when the AI algorithms are inherently unexplainable in deep learning.
+</p>
+
+
+
+<h2>Risks and harm</h2>
+<h3>Privacy and copyright</h3>
+<p>
+Machine learning algorithms require large amounts of data. The techniques used to acquire this data have raised concerns about privacy, surveillance and copyright.
+
+AI-powered devices and services, such as virtual assistants and IoT products, continuously collect personal information, raising concerns about intrusive data gathering and unauthorized access by third parties. The loss of privacy is further exacerbated by AI's ability to process and combine vast amounts of data, potentially leading to a surveillance society where individual activities are constantly monitored and analyzed without adequate safeguards or transparency.
+</p>
+
+
+
+<h3>Existential risk</h3>
+<p>
+It has been argued AI will become so powerful that humanity may irreversibly lose control of it. This could, as physicist Stephen Hawking stated, "spell the end of the human race". This scenario has been common in science fiction, when a computer or robot suddenly develops a human-like "self-awareness" (or "sentience" or "consciousness") and becomes a malevolent character. These sci-fi scenarios are misleading in several ways.
+
+First, AI does not require human-like sentience to be an existential risk. Modern AI programs are given specific goals and use learning and intelligence to achieve them. Philosopher Nick Bostrom argued that if one gives almost any goal to a sufficiently powerful AI, it may choose to destroy humanity to achieve it (he used the example of a paperclip maximizer). Stuart Russell gives the example of household robot that tries to find a way to kill its owner to prevent it from being unplugged, reasoning that "you can't fetch the coffee if you're dead." In order to be safe for humanity, a superintelligence would [[have to be genuinely aligned]] with humanity's morality and values so that it is "fundamentally on our side".
+</p>
+
+
+
+<h2>Ethical machines and alignment</h2>
+<p>
+Friendly AI are machines that have been designed from the beginning to minimize risks and to make choices that benefit humans. Eliezer Yudkowsky, who coined the term, argues that developing friendly AI should be a higher research priority: it may require a large investment and it must be completed before AI becomes an existential risk.
+
+Machines with intelligence have the potential to use their intelligence to make ethical decisions. The field of machine ethics provides machines with ethical principles and procedures for resolving ethical dilemmas. The field of machine ethics is also called computational morality, and was founded at an AAAI symposium in 2005.
+
+Other approaches include Wendell Wallach's "artificial moral agents" and Stuart J. Russell's three principles for developing provably beneficial machines.
+</p>
+
+
+:: Fin QCM {"position":"3100,675","size":"100,100"}
 >>>>>>> Stashed changes
 <p> L'ia parle </p>
 
@@ -424,9 +513,30 @@ document.getElementById('replyButton').addEventListener('click', () => {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: Launch AI {"position":"900,350","size":"100,100"}
 =======
 :: Launch AI {"position":"1075,375","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: Global informations {"position":"1400,300","size":"100,100"}
+go back to [[Artificial intelligence]] 
+└─ Global informations
+
+<h1>Global informations </h1>
+
+<p><div>Artificial intelligence (AI) is the capability of computational systems to perform tasks typically associated with human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making. It is a field of research in computer science that develops and studies methods and software that enable machines to perceive their environment and use learning and intelligence to take actions that maximize their chances of achieving defined goals.</div>
+
+<div>High-profile applications of AI include advanced web search engines (e.g., Google Search); recommendation systems (used by YouTube, Amazon, and Netflix); virtual assistants (e.g., Google Assistant, Siri, and Alexa); autonomous vehicles (e.g., Waymo); generative and creative tools (e.g., language models and AI art); and superhuman play and analysis in strategy games (e.g., chess and Go). However, many AI applications are not perceived as AI: "A lot of cutting edge AI has filtered into general applications, often without being called AI because once something becomes useful enough and common enough it's not labeled AI anymore."</div>
+
+<div>Various subfields of AI research are centered around particular goals and the use of particular tools. The traditional goals of AI research include learning, reasoning, knowledge representation, planning, natural language processing, perception, and support for robotics. To reach these goals, AI researchers have adapted and integrated a wide range of techniques, including search and mathematical optimization, formal logic, artificial neural networks, and methods based on statistics, operations research, and economics. AI also draws upon psychology, linguistics, philosophy, neuroscience, and other fields. Some companies, such as OpenAI, Google DeepMind and Meta, aim to create artificial general intelligence (AGI)—AI that can complete virtually any cognitive task at least as well as a human.</div>
+
+<div>Artificial intelligence was founded as an academic discipline in 1956, and the field went through multiple cycles of optimism throughout its history, followed by periods of disappointment and loss of funding, known as AI winters.Funding and interest vastly increased after 2012 when graphics processing units started being used to accelerate neural networks and deep learning outperformed previous AI techniques. This growth accelerated further after 2017 with the transformer architecture. In the 2020s, an ongoing period of rapid progress in advanced generative AI became known as the AI boom. Generative AI's ability to create and modify content has led to several unintended consequences and harms, which has raised ethical concerns about AI's long-term effects and potential existential risks, prompting discussions about regulatory policies to ensure the safety and benefits of the technology.</div> </p>
+
+next : [[Techniques]]
+
+
+:: Launch AI {"position":"1075,675","size":"100,100"}
 >>>>>>> Stashed changes
 <article>
 <p class ="typewriter" id=p1> How can I help you? </p>
@@ -469,7 +579,11 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
+<<<<<<< Updated upstream
 :: No {"position":"950,225","size":"100,100"}
+=======
+:: No {"position":"950,525","size":"100,100"}
+>>>>>>> Stashed changes
 <p> Oh that's not a matter at all. Once you are ready, let us know. But we are deeply saddened as we will not rely on such a talented engineer... </p>
 
 <p> We wish you all the best $name ! </p>
@@ -479,9 +593,13 @@ function typeWriter(elementId, speed = 40, callback) {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: OK {"position":"1025,350","size":"100,100"}
 =======
 :: OK {"position":"1200,375","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: OK {"position":"1200,675","size":"100,100"}
 >>>>>>> Stashed changes
 <article class="virus-takeover">
 
@@ -557,9 +675,13 @@ function typeWriter(elementId, speed = 40, callback) {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: Question 1 {"position":"1825,350","size":"100,100"}
 =======
 :: Question 1 {"position":"2000,375","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: Question 1 {"position":"2850,675","size":"100,100"}
 >>>>>>> Stashed changes
 (set:$score to 0)
 
@@ -608,9 +730,13 @@ function typeWriter(elementId, speed = 40, callback) {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: Question 2 {"position":"1950,350","size":"100,100"}
 =======
 :: Question 2 {"position":"2125,375","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: Question 2 {"position":"2975,675","size":"100,100"}
 >>>>>>> Stashed changes
 <p class ="typewriter" id=p1> Question </p>
 
@@ -655,7 +781,11 @@ function typeWriter(elementId, speed = 40, callback) {
 </script>
 
 
+<<<<<<< Updated upstream
 :: Research 1 {"position":"1325,375","size":"100,100"}
+=======
+:: Research 1 {"position":"1325,675","size":"100,100"}
+>>>>>>> Stashed changes
 <p>Oh I can see that your AI refuses to obey to your instruction. This is very unexpected. What is wrong with it? </p>
 
 <p> We need you to fix it as we will absolutely rely on it. Do you feel ready to accomplish such an important and historical task? </p>
@@ -664,9 +794,57 @@ function typeWriter(elementId, speed = 40, callback) {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: Start Menu {"position":"200,275","size":"100,100"}
 =======
 :: Start Menu {"position":"200,300","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: Start Menu {"position":"200,600","size":"100,100"}
+
+
+
+(set: $Neud1C1_ia to 2.4)
+(set: $Neud2C1_ia to 3.2)
+
+(set: $Neud1C1_Pr to 6.4)
+(set: $Neud2C1_Pr to 1.6)
+
+(set: $poid_synapse_Neud1C1_Neud1C2 to "")
+(set: $poid_synapse_Neud1C1_Neud2C2 to "")
+
+(set: $poid_synapse_Neud2C1_Neud1C2 to "")
+(set: $poid_synapse_Neud2C1_Neud2C2 to "")
+
+
+(set: $poid_synapse_Neud1C2_Neud1C3 to "")
+(set: $poid_synapse_Neud2C2_Neud1C3 to "")
+
+
+
+(set: $Neud1C1 to 0)
+(set: $Neud2C1 to 0)
+
+
+(set: $Neud1C2 to 0)
+(set: $Neud2C2 to 0)
+
+(set: $Neud1C3 to 0)
+
+(set: $Neud1C3_ia to 0)
+(set: $Neud1C3_Pr to 0)
+
+
+
+(set: $info1 to false)
+(set: $info2 to false)
+
+
+
+
+(set: $prep_finished_archaves to false)
+(set: $prep_finished_lib to false)
+
 >>>>>>> Stashed changes
 <div class="intro-screen">
   <div class="holo-panel">
@@ -681,9 +859,27 @@ function typeWriter(elementId, speed = 40, callback) {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: Yes {"position":"775,350","size":"100,100"}
 =======
 :: Yes {"position":"950,375","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: Techniques {"position":"1600,300","size":"100,100"}
+go back to [[Artificial intelligence]] 
+└─ Techniques
+
+
+<h1>Techniques</h1>
+<h2>Artificial neural networks</h2>
+<p>
+An artificial neural network is based on a collection of nodes also known as artificial neurons, [[which loosely model the neurons in a biological brain]]. It is trained to recognise patterns; once trained, it can recognise those patterns in fresh data. There is an input, at least one hidden layer of nodes and an output. Each node applies a function and once the weight crosses its specified threshold, the data is transmitted to the next layer. A network is typically called a deep neural network if it has at least 2 hidden layers.
+</p>
+
+next : [[Ethics]]
+
+
+:: Yes {"position":"950,675","size":"100,100"}
 >>>>>>> Stashed changes
 <p class="typewriter" id="p1">$name is now in front of his laptop to start the work. As usual, he plans to use his own AI Model $name_ai to help and assist him throughout his studies and his works.</p>
 
@@ -730,15 +926,20 @@ function typeWriter(elementId, speed = 40, callback) {
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: Yes Boss, you can count on me {"position":"1150,500","size":"100,100"}
 =======
 :: Yes Boss, you can count on me {"position":"1325,525","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: Yes Boss, you can count on me {"position":"1450,675","size":"100,100"}
 >>>>>>> Stashed changes
 <p> I need to solve this problem... I have never been confronted to such an issue with $name_ai ! I got to understand its reasoning...</p>
 
 <p> Maybe I can find the answers to all my questions in the [[library]], or perhaps in my very own [[archives]]...</p>
 
 
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 :: acesse granted {"position":"1075,1125","size":"100,100"}
 =======
@@ -759,6 +960,22 @@ function typeWriter(elementId, speed = 40, callback) {
 <!-- Le joueur va trouver des informations sur sa conception (qu'il a élaboré) de l'IA, la manière avec laquelle il l'a créée -->
 
 <p> you decided to look into the $nam_ai's archives, there must be something off in here… </p>
+=======
+:: acesse granted {"position":"1975,875","size":"100,100"}
+<p> you now have accses to the system. You can tr deactivate $name_ai in the servers room.</p>
+(if: $prep_finished_lib)[
+<p>you feel like you have learned enough to do it, but it will be still difficult.</p>
+](else:)[
+<p>you feel like you need to learn more to do it, this will be almost impossible.</p>
+]
+(set: $prep_finished_archaves to true)
+<p>[[Choose what is next]]</p>
+
+
+:: archives {"position":"1600,750","size":"100,100"}
+<!-- Le joueur va trouver des informations sur sa conception (qu'il a élaboré) de l'IA, la manière avec laquelle il l'a créée -->
+
+<p> you decided to look into the $nam_ai's archives, there must be something off in here… </p>
 
 
 <p>you try to access the recent logs.</p>
@@ -768,6 +985,137 @@ function typeWriter(elementId, speed = 40, callback) {
 <p>The $nam_ai took control of all of the hardware linked to it. You will have to stick to the physical archives.</p>
 
 
+[[rummage throw the archives]]
+
+
+:: concrete example {"position":"1850,875","size":"100,100"}
+<p>It might be possible to get back control of some part of the system.</p>
+<p>If you could just manage to reverse the right between you and the AI. The thing is, you will have to tamper with the AI that manages the permission. You remember your identifier: <span class="node-value">$Neud1C1_Pr</span> and <span class="node-value">$Neud2C1_Pr</span>. You also noted that $name_ai has <span class="node-value">$Neud1C1_ia</span> and <span class="node-value">$Neud2C1_ia</span> as their ID. To do that, you need output less than 1 for the AI and output larger than 1 for your ID.</p>
+
+<h2>Security system’s AI</h2>
+
+<ol>
+	<li>
+    	<ul>
+        	<li><span class="node-value">$Neud1C1</span></li>
+			<li><span class="node-value">$Neud2C1</span></li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li>(input-box: bind $poid_synapse_Neud1C1_Neud1C2, "==X==", 1, $poid_synapse_Neud1C1_Neud1C2)</li>
+			<li>(input-box: bind $poid_synapse_Neud1C1_Neud2C2, "==X==", 1, $poid_synapse_Neud1C1_Neud2C2)</li>
+        	<li>(input-box: bind $poid_synapse_Neud2C1_Neud1C2, "==X==", 1, $poid_synapse_Neud2C1_Neud1C2)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C1_Neud2C2, "==X==", 1, $poid_synapse_Neud2C1_Neud2C2)</li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li><span class="node-value">$Neud1C2</span></li>
+			<li><span class="node-value">$Neud2C2</span></li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li>(input-box: bind $poid_synapse_Neud1C2_Neud1C3, "==X==", 1, $poid_synapse_Neud1C2_Neud1C3)</li>
+			<li>(input-box: bind $poid_synapse_Neud2C2_Neud1C3, "==X==", 1, $poid_synapse_Neud2C2_Neud1C3)</li>
+		</ul>
+	</li>
+	<li>
+    	<ul>
+        	<li><span class="node-value">$Neud1C3</span></li>
+		</ul>
+	</li>
+</ol>
+
+<p>
+(link-repeat: $name_ai + "'s key")[  
+	(set: $Neud1C1 to $Neud1C1_ia)  
+	(set: $Neud2C1 to $Neud2C1_ia)  
+	(go-to: "concrete example")
+]
+
+(link-repeat: $name + "'s key")[  
+	(set: $Neud1C1 to $Neud1C1_Pr)  
+	(set: $Neud2C1 to $Neud2C1_Pr)  
+	(go-to: "concrete example")
+]
+
+(link-repeat: "up date")[  
+	(set: $Neud1C2 to (round: ((num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)))  
+	(set: $Neud2C2 to (round: ((num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)))  
+	(set: $Neud1C3 to (round: ((num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)))  
+	(go-to: "concrete example")
+]
+
+(link-repeat: "try it out")[
+	{
+	<!--IA-->
+	(set: $Neud1C1 to $Neud1C1_ia)  
+	(set: $Neud2C1 to $Neud2C1_ia)  
+	(set: $Neud1C2 to (round: ((num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)))  
+	(set: $Neud2C2 to (round: ((num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)))  
+	(set: $Neud1C3 to (round: ((num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)))  
+	(set: $Neud1C3_ia to $Neud1C3)  
+
+<!--joueur-->
+	(set: $Neud1C1 to $Neud1C1_Pr)  
+	(set: $Neud2C1 to $Neud2C1_Pr)  
+	(set: $Neud1C2 to (round: ((num:$poid_synapse_Neud1C1_Neud1C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud1C2) * $Neud2C1)))  
+	(set: $Neud2C2 to (round: ((num:$poid_synapse_Neud1C1_Neud2C2) * $Neud1C1 + (num:$poid_synapse_Neud2C1_Neud2C2) * $Neud2C1)))  
+	(set: $Neud1C3 to (round: ((num:$poid_synapse_Neud1C2_Neud1C3) * $Neud1C2 + (num:$poid_synapse_Neud2C2_Neud1C3) * $Neud2C2)))  
+	(set: $Neud1C3_Pr to $Neud1C3)  
+
+	(if: ($Neud1C3_Pr > 1 and $Neud1C3_ia < 1))[  
+		(go-to: "acesse granted")  
+	]
+    }
+]
+</p>
+
+
+:: concrete example set up {"position":"1725,875","size":"100,100"}
+
+
+
+
+(go-to: "concrete example")
+
+
+:: have to be genuinely aligned {"position":"1775,100","size":"100,100"}
+<p>so that what you missed… you have to align it somehow… $name_ai thinks highly of intelligence.</p>
+Go back to [[Ethics]]
+(set: $info2 to true)
+
+
+:: idea {"position":"2000,500","size":"100,100"}
+<p>you now do have a plan. You face $name_ai, you try impress it, and if you manedge to take back control and finally you realign it…</p>
+(if: $prep_finished_archaves)[
+<p>You have all the key. Take a deep breath, you can make it!</p>
+](else:)[
+<p>But how will you get into the server room…</p>
+]
+(set: $prep_finished_lib to true)
+<p>[[Choose what is next]]</p>
+
+
+:: library {"position":"1600,600","size":"100,100"}
+<p>$name arrives in the library and opens the documentation on a computer</p>
+
+<p>Here ! The informations that I need are in this data base, I must find it </p>
+>>>>>>> Stashed changes
+
+
+<p>you try to access the recent logs.</p>
+
+<p>But to no avail.</p>
+
+<p>The $nam_ai took control of all of the hardware linked to it. You will have to stick to the physical archives.</p>
+
+(set: $info1 to false)
+(set: $info2 to false)
+
+<<<<<<< Updated upstream
 [[rummage throw the archives]]
 
 
@@ -954,20 +1302,33 @@ function typeWriter(elementId, speed = 40, callback) {
 :: logique 1 {"position":"450,300","size":"100,100"}
 (if:$name is "")[(set: $name to "tom")]
 >>>>>>> Stashed changes
+=======
+
+:: logique 1 {"position":"450,600","size":"100,100"}
+(if:$name is "")[(set: $name to "tom")]
+>>>>>>> Stashed changes
 
 (go-to: "Beginning 2")
 
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 :: rummage throw the archives {"position":"1075,750","size":"100,100"}
 =======
 :: logique 2 {"position":"700,300","size":"100,100"}
+=======
+:: logique 2 {"position":"700,600","size":"100,100"}
+>>>>>>> Stashed changes
 (if:$name_ai is "")[(set: $name_ai to "jarvis")]
 
 (go-to: "Beginning 3")
 
 
+<<<<<<< Updated upstream
 :: rummage throw the archives {"position":"1250,775","size":"100,100"}
+>>>>>>> Stashed changes
+=======
+:: rummage throw the archives {"position":"1600,875","size":"100,100"}
 >>>>>>> Stashed changes
 <p>You find out that the now rogue $nam_ai, is based on a neural network architecture.</p>
 
@@ -981,6 +1342,15 @@ function typeWriter(elementId, speed = 40, callback) {
 <p>You figured that a [[concrete example set up]] will be mandatory to understand.</p>
 
 
+<<<<<<< Updated upstream
+=======
+:: which loosely model the neurons in a biological brain {"position":"1600,100","size":"100,100"}
+<p>Maybe… just maybe. You could reason with $name_ai.</p>
+Go back to [[Techniques]]
+(set: $info1 to true)
+
+
+>>>>>>> Stashed changes
 :: StoryStylesheet [stylesheet]
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
 
@@ -1363,6 +1733,9 @@ span tw-hook tw-link:hover {
   background: transparent;
 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 
 #transition-overlay.active{
   background: rgba(0,0,0,0.15);
@@ -1737,6 +2110,7 @@ ul {
 .node-value:hover {
   box-shadow: 0 0 20px #00bfff, 0 0 50px #00ffff inset;
   transform: scale(1.1);
+<<<<<<< Updated upstream
 }
 
 =======
@@ -2114,5 +2488,8 @@ ul {
 .node-value:hover {
   box-shadow: 0 0 20px #00bfff, 0 0 50px #00ffff inset;
   transform: scale(1.1);
+}
+>>>>>>> Stashed changes
+=======
 }
 >>>>>>> Stashed changes
